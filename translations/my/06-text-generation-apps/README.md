@@ -1,165 +1,172 @@
-# စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းများ တည်ဆောက်ခြင်း
+# စာသားထုတ်လုပ်ခြင်းအတွက် အက်ပလီကေးရှင်းများ တည်ဆောက်ခြင်း
 
-[![စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းများ တည်ဆောက်ခြင်း](../../../translated_images/my/06-lesson-banner.a5c629f990a636c8.webp)](https://youtu.be/0Y5Luf5sRQA?si=t_xVg0clnAI4oUFZ)
+[![Building Text Generation Applications](../../../translated_images/my/06-lesson-banner.a5c629f990a636c8.webp)](https://youtu.be/0Y5Luf5sRQA?si=t_xVg0clnAI4oUFZ)
 
-> _(အထက်ပါပုံကိုနှိပ်ပြီး ဒီသင်ခန်းစာရဲ့ဗီဒီယိုကိုကြည့်ပါ)_
+> _(ဒီသင်ခန်းစာ ရုပ်ရှင်ကို ကြည့်ရန် ဓာတ်ပုံကို နှိပ်ပါ)_
 
-ဒီသင်ခန်းစာတွင် သင်တွေ့ရှိခဲ့တာက prompt တွေလို အဓိကအကြောင်းအရာများနှင့် "prompt engineering" လို့ခေါ်တဲ့ အတတ်ပညာတစ်ခုတောင်ရှိတယ်ဆိုတာပါပဲ။ ChatGPT, Office 365, Microsoft Power Platform စတဲ့ tools တွေကို သင်အသုံးပြုနိုင်ပြီး prompt တွေကိုအသုံးပြုပြီး တစ်စုံတစ်ခုကို ပြုလုပ်နိုင်ပါတယ်။
+ဒီသင်ခန်းစာအစီအစဉ်ပေါ်မှာ မှတ်သားလာတာက prompt လို အခြေခံအယူအဆတွေရှိပြီး "prompt engineering" လို့ခေါ်တဲ့ စနစ်တစ်ခုလုံးလည်း ရှိတယ်ဆိုတာ ဖြစ်ပါတယ်။ ChatGPT, Office 365, Microsoft Power Platform နဲ့ အခြားကိရိယာတွေ အများကြီးက prompt တွေ့အရ အသုံးပြုပြီး တစ်ခုခုကို ပြုလုပ်နိုင်ဖို့ ကူညီတယ်။
 
-ဒီလိုအတွေ့အကြုံကို သင့်အက်ပလီကေးရှင်းထဲမှာ ထည့်သွင်းဖို့ဆိုရင် prompt, completions စတဲ့အကြောင်းအရာတွေကို နားလည်ဖို့လိုပါတယ်။ ဒီအခန်းမှာ အဲ့ဒီအကြောင်းတွေကို သင်လေ့လာရမှာပါ။
+သင့်အက်ပလီကေးရှင်းမှာ အဲ့ဒီနည်းလမ်းကို ထည့်သွင်းချင်ရင် prompt, completion နဲ့ အတူလက်တွဲသတ်မှတ်ရန် နက်နဲတဲ့ သိရှိမှုတွေ ရှိဖို့ လိုအပ်တယ်။ ဒီဘာသာရပ်မှာ သင်သင်ယူရမယ့်အရာတွေဟာ အဲဒီအကြောင်းတွေပါပဲ။
 
-## အကျဉ်းချုပ်
+## နိဒါန်း
 
-ဒီအခန်းမှာ သင် -
+ဒီအခန်းမှာ သင်သည် -
 
-- openai library နဲ့ အဓိကအကြောင်းအရာတွေကို လေ့လာပါမယ်။
-- openai ကိုအသုံးပြုပြီး စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းတစ်ခုကို တည်ဆောက်ပါမယ်။
-- prompt, temperature, tokens စတဲ့အကြောင်းအရာတွေကို အသုံးပြုပြီး စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းတစ်ခုကို တည်ဆောက်ပုံကို နားလည်ပါမယ်။
+- openai library နှင့် ၎င်း၏ အဓိကအယူအဆများကို သင်ယူမည်။
+- openai ကို အသုံးပြုပြီး စာသားထုတ်လုပ်ခြင်း application တစ်ခု တည်ဆောက်မည်။
+- prompt, temperature, tokens စသည့် အယူအဆများကို အသုံးပြု၍ စာသားထုတ်လုပ်ခြင်း app တည်ဆောက်နည်းကို နားလည်မည်။
 
-## သင်ယူရမယ့်ရည်မှန်းချက်များ
+## သင်ယူမှု ရည်မှန်းချက်များ
 
-ဒီသင်ခန်းစာအဆုံးမှာ သင် -
+ဒီသင်ခန်းစာအဆုံးတွင် သင်သည် -
 
-- စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းဆိုတာဘာလဲဆိုတာ ရှင်းပြနိုင်ပါမယ်။
-- openai ကိုအသုံးပြုပြီး စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းတစ်ခုကို တည်ဆောက်နိုင်ပါမယ်။
-- သင့်အက်ပလီကေးရှင်းကို tokens ပိုသုံး/နည်းစေဖို့နဲ့ varied output ရဖို့ temperature ကိုပြောင်းနိုင်ပါမယ်။
+- စာသားထုတ်လုပ်ခြင်း app ဆိုတာဘာလဲ ဆိုတာ ရှင်းပြနိုင်မည်။
+- openai ကို အသုံးပြုပြီး စာသားထုတ်လုပ်ခြင်း app တည်ဆောက်နိုင်မည်။
+- ဆက်လက် အသုံးပြုမှု အတွက် tokens ပမာဏ များ/နည်းခြင်း၊ temperature ကို ပြောင်းလဲ၍ အထွက်အလွှာ မတူညီရေး ဆက်လက် ပြင်ဆင်နိုင်မည်။
 
-## စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းဆိုတာဘာလဲ?
+## စာသားထုတ်လုပ်ခြင်း app ဆိုတာ ဘာလဲ?
 
-ပုံမှန်အားဖြင့် သင်အက်ပလီကေးရှင်းတစ်ခုကို တည်ဆောက်တဲ့အခါမှာ အောက်ပါလို interface တစ်ခုခုရှိပါတယ် -
+အက်ပလီကေးရှင်းတစ်ခု တည်ဆောက်တဲ့အခါ များသောအားဖြင့် အောက်ပါမျိုးစုံ နည်းလမ်းတွေနဲ့ ပါလာတတ်ပါတယ် -
 
-- **Command-based**။ Console apps တွေက command-based apps တွေဖြစ်ပြီး သင် command တစ်ခုကို ရိုက်ထည့်ပြီး task တစ်ခုကိုလုပ်ဆောင်ပါတယ်။ ဥပမာ `git` က command-based app တစ်ခုဖြစ်ပါတယ်။
-- **User interface (UI)**။ အချို့ apps တွေမှာ graphical user interfaces (GUIs) ရှိပြီး သင် button တွေကိုနှိပ်ခြင်း၊ စာသားရိုက်ထည့်ခြင်း၊ option တွေကိုရွေးခြင်းစတဲ့အရာတွေကိုလုပ်နိုင်ပါတယ်။
+- ကွန်မန်းဖြင့် စီမံခြင်း။ Console app တွေမှာ command တစ်ချက်လို့ ရိုက်ထည့်လိုက်ရင် အလုပ်တစ်ခု ထွက်ခွာ တာဖြစ်ပါတယ်။ ဥပမာ `git` ဆိုတာက command-based app တစ်ခုပါ။
+- အသုံးပြုသူအင်တာဖေ့( UI)။ အချို့ app တွေမှာ graphical user interfaces (GUI) ရှိပြီး ခလုတ်တွေ နှိပ်၊ စာထည့်၊ ရွေးချယ်မှုများ ပြုလုပ်နိုင်ပါတယ်။
 
-### Console နဲ့ UI apps တွေက အကန့်အသတ်ရှိပါတယ်
+### Console နဲ့ UI app တွေမှာ ကန့်သတ်ချက်တွေ ရှိတယ်
 
-Command-based app နဲ့ နှိုင်းယှဉ်ကြည့်ပါ -
+command-based app တစ်ခုမှာ command များ ရိုက်ထည့်တဲ့အခြေအနေနဲ့ နှိုင်းယှဉ်ကြည့်ပါ -
 
-- **အကန့်အသတ်ရှိတယ်**။ သင် app က support လုပ်တဲ့ command တွေကိုသာ ရိုက်နိုင်ပြီး အခြား command တွေကို ရိုက်လို့မရပါဘူး။
-- **ဘာသာစကားအထူးပြု**။ အချို့ apps တွေက ဘာသာစကားများစွာကို support လုပ်ပေမယ့် ပုံမှန်အားဖြင့် app ကို အထူးပြုထားတဲ့ ဘာသာစကားအတွက် တည်ဆောက်ထားပါတယ်။ သို့သော် အခြားဘာသာစကား support ကို ထည့်သွင်းနိုင်ပါတယ်။
+- **ကန့်သတ်ထားတယ်**။ ဘယ်အရာမဆို command ရိုက်၍ မရပါ။ app မှ ထောက်ခံထားတဲ့ command တွေပဲရိုက်နိုင်သည်။
+- **ဘာသာစကားအထူးပြု**။ အချို့ app တွေက ဘာသာစကားများစွာကို ထောက်ခံပေမယ့် မူလတည်းက အတွက်တစ်ခု အတွက် တည်ဆောက်ထားပြီး နောက်ထပ် ဘာသာစကား ထည့်သွင်းနိုင်သည်။
 
-### စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းများ၏ အကျိုးကျေးဇူးများ
+### စာသားထုတ်လုပ် app ရဲ့ အကျိုးဖြစ်ရပ်များ
 
-စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းက ဘာကြောင့် ကွဲပြားတာလဲ?
+စာသားထုတ်လုပ် app တစ်ခုက ဘာကွာခြားလဲ?
 
-စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းမှာ သင်ပိုပြီး flexible ဖြစ်ပြီး command တွေတစ်ခုခုနဲ့ input language တစ်ခုခုမှာ အကန့်အသတ်မရှိပါဘူး။ အစား သင် app နဲ့ natural language ကိုအသုံးပြုပြီး ဆက်သွယ်နိုင်ပါတယ်။ အခြားအကျိုးကျေးဇူးတစ်ခုကတော့ သင် database ထဲမှာရှိတဲ့အချက်အလက်တွေမှာသာ အကန့်အသတ်မရှိဘဲ အချက်အလက်များစွာကို training လုပ်ထားတဲ့ data source နဲ့ ဆက်သွယ်နေပါတယ်။
+စာသားထုတ်လုပ် app တွင် အသုံးပြုသူ ထက်ပို၍ လွတ်လပ်မှု ရှိသည်၊ ကန့်သတ်ထားသော command များ သို့မဟုတ် တိကျသော input language မှသာမက ပုံမှန်ဘာသာစကားဖြင့် အပြန်အလှန် ဆက်သွယ်နိုင်သည်။ ထိုအပြင် စာသားထုတ်လုပ်ထားသော app တွင် ကြီးမားသော သတင်းအချက်အလက်စုစည်းမှုအား လေ့ကျင့်ထားသော data source နဲ့ အပြန်အလှန် ဆက်သွယ်နေရသည်၊ ထိုသို့ မဟုတ် traditional အက်ပလီကေးရှင်းတွင် database ထဲမှာ ရှိသည့် အချက်အလက်များ အကန့်အသတ်ရရှိနိုင်သည်။
 
-### စာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းနဲ့ ဘာတွေတည်ဆောက်နိုင်မလဲ?
+### စာသားထုတ်လုပ် app နဲ့ ဘာတွေ တည်ဆောက်နိုင်မလဲ?
 
-တည်ဆောက်နိုင်တဲ့အရာတွေ အများကြီးရှိပါတယ်။ ဥပမာ -
+များစွာ တန်ဆာပလာများ ရှိပါတယ်။ ဥပမာ -
 
-- **Chatbot**။ သင့်ကုမ္ပဏီနဲ့ ထုတ်ကုန်တွေကို အကြောင်းပြောတဲ့ chatbot တစ်ခုက သင့်တော်တဲ့ရွေးချယ်မှုတစ်ခုဖြစ်နိုင်ပါတယ်။
-- **Helper**။ LLMs တွေက စာသားကို အကျဉ်းချုပ်ခြင်း၊ အချက်အလက်တွေကို ရှာဖွေခြင်း၊ စာသားတွေကို ထုတ်လုပ်ခြင်း (ဥပမာ - ရာထူးလျှောက်လွှာ) စတဲ့အရာတွေမှာ အထူးကောင်းပါတယ်။
-- **Code assistant**။ သင်အသုံးပြုတဲ့ language model ပေါ်မူတည်ပြီး သင် code ရေးဖို့ကူညီပေးတဲ့ code assistant တစ်ခုကို တည်ဆောက်နိုင်ပါတယ်။ ဥပမာ GitHub Copilot နဲ့ ChatGPT တို့ကို အသုံးပြုပြီး code ရေးဖို့ကူညီပေးနိုင်ပါတယ်။
+- **Chatbot**။ သင့်ကုမ္ပဏီနဲ့ ထုတ်ကုန်များအကြောင်း မေးခွန်းများကို ဖြေဆိုပေးသော chatbot အကျိုးရှိနိုင်သည်။
+- **ကူညီသူ**။ LLMs သည် စာသားအကျဉ်းချုပ်ျခင်း၊ အချက်အလက်သုံးသပ်ခြင်း၊ ရှာဖွေရေးစာတမ်း စသည်ဖြင့် စပ်ဆိုင်ရာ စာသားများပြုလုပ်ရာတွင် ကျွမ်းကျင်သည်။
+- **Code assistant**။ သင်အသုံးပြုမည့် language model မူတည်ပြီး၊ ကုဒ်ရေးရာကူညီရန် code assistant တစ်ခု တည်ဆောက်နိုင်သည်။ ဥပမာ GitHub Copilot နှင့် ChatGPT တို့ အသုံးပြု၍ ကုဒ်ရေးရာ ကူညီနိုင်သည်။
 
-## ဘယ်လိုစတင်နိုင်မလဲ?
+## ဘယ်လို စတင်မလဲ?
 
-အရင်ဆုံး LLM နဲ့ပေါင်းစည်းဖို့နည်းလမ်းတစ်ခုကို ရှာဖွေရပါမယ်။ အဲဒါက အောက်ပါနည်းလမ်းနှစ်ခုကိုပါဝင်ပါတယ် -
+LLM ထဲနှင့် ပေါင်းစပ်ရန် လမ်းကြောင်း နှစ်ခု ရှိသည် -
 
-- **API ကိုအသုံးပြုပါ**။ ဒီမှာ သင့် prompt ကို web requests တွေတည်ဆောက်ပြီး generated text ကိုပြန်ရရှိမှာဖြစ်ပါတယ်။
-- **Library ကိုအသုံးပြုပါ**။ Library တွေက API calls တွေကို encapsulate လုပ်ပြီး အသုံးပြုရလွယ်ကူစေပါတယ်။
+- API အသုံးပြုခြင်း။ သင်၏ prompt ဖြင့် web request များ ဖန်တီးပြီး ထုတ်ဖော်ထားသော စာသားများ ရယူသည်။
+- Library အသုံးပြုခြင်း။ Libraries များက API ခေါ်ဆိုမှုများ ထုပ်ပိုးပေးပြီး အသုံးပြုရ လွယ်ကူသည်။
 
 ## Libraries/SDKs
 
-LLMs တွေနဲ့အလုပ်လုပ်ဖို့အတွက် နာမည်ကြီး library အချို့ရှိပါတယ် -
+LLMs နှင့် လုပ်ကိုင်ရာတွင် ကျော်ကြားသော libraries အနည်းငယ်ရှိပါသည် -
 
-- **openai**၊ ဒီ library က သင့် model နဲ့ချိတ်ဆက်ပြီး prompt တွေကို ပေးပို့ဖို့ လွယ်ကူစေပါတယ်။
+- **openai**၊ ဒီ library က သင့် model နဲ့ လွယ်ကူစွာ ချိတ်ဆက်ပြီး prompt တွေ ပို့နိုင်သည်။
 
-ပြီးတော့ အဆင့်မြင့်အဆင့်မှာ အလုပ်လုပ်တဲ့ library တွေရှိပါတယ် -
+ထို့အပြင် အဆင့်မြင့် library များလည်း ရှိသည် -
 
-- **Langchain**။ Langchain က နာမည်ကြီးပြီး Python ကို support လုပ်ပါတယ်။
-- **Semantic Kernel**။ Semantic Kernel က Microsoft ရဲ့ library ဖြစ်ပြီး C#, Python, Java ဘာသာစကားတွေကို support လုပ်ပါတယ်။
+- **Langchain**။ Langchain သည် နာမည်ကြီး၍ Python ကို ထောက်ပံ့သည်။
+- **Semantic Kernel**။ Semantic Kernel သည် Microsoft ၏ library ဖြစ်ပြီး C#, Python, Java ဘာသာစကားများကို ထောက်ပံ့သည်။
 
-## openai ကိုအသုံးပြုပြီး ပထမဆုံးအက်ပလီကေးရှင်းတည်ဆောက်ခြင်း
+## openai အသုံးပြုပြီး ပထမဆုံး app တည်ဆောက်ခြင်း
 
-openai ကိုအသုံးပြုပြီး ပထမဆုံးအက်ပလီကေးရှင်းတစ်ခုကို ဘယ်လိုတည်ဆောက်ရမလဲ၊ ဘယ်လို library တွေလိုအပ်မလဲ၊ ဘယ်လောက်အလုပ်လုပ်ရမလဲဆိုတာကို ကြည့်ကြမယ်။
+ပထမဆုံး app ကို မည်သို့တည်ဆောက်ရမည်၊ မည်သည့် libraries လိုအပ်သည်၊ လိုအပ်သလောက် မည်မျှရှိသည် စသဖြင့် ကြည့်ကြပါစို့။
 
-### openai ကို install လုပ်ပါ
+### openai ထည့်သွင်းခြင်း
 
-OpenAI သို့မဟုတ် Azure OpenAI နဲ့အလုပ်လုပ်ဖို့ library တွေ အများကြီးရှိပါတယ်။ C#, Python, JavaScript, Java စတဲ့ programming languages အမျိုးမျိုးကိုလည်း အသုံးပြုနိုင်ပါတယ်။ ကျွန်တော်တို့က `openai` Python library ကိုရွေးလိုက်ပြီးတော့ `pip` ကိုအသုံးပြုပြီး install လုပ်ပါမယ်။
+OpenAI သို့မဟုတ် Azure OpenAI တွင် ဆက်သွယ်ရန် library များအများအပြားရှိသည်။ C#, Python, JavaScript, Java စသည့် programming languages များကိုလည်း အသုံးပြုနိုင်သည်။ ကျွန်တော်တို့က `openai` Python library ကို ရွေးချယ်ဖြစ်ပြီး `pip` ဖြင့် ထည့်သွင်းမှာ ဖြစ်သည်။
 
 ```bash
 pip install openai
 ```
 
-### Resource တစ်ခုကိုဖန်တီးပါ
+### resource တစ်ခု ဖန်တီးခြင်း
 
-အောက်ပါအဆင့်တွေကိုလုပ်ဆောင်ရပါမယ် -
+အောက်ပါတိုင်း ဆောင်ရွက်ရမည် -
 
-- Azure မှာ account တစ်ခုဖွင့်ပါ [https://azure.microsoft.com/free/](https://azure.microsoft.com/free/?WT.mc_id=academic-105485-koreyst)။
-- Azure OpenAI ကို access ရယူပါ။ [https://learn.microsoft.com/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai](https://learn.microsoft.com/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai?WT.mc_id=academic-105485-koreyst) ကိုသွားပြီး access ကိုတောင်းဆိုပါ။
+- Azure ပေါ်မှာ အကောင့်တစ်ခု ဖန်တီးပါ [https://azure.microsoft.com/free/](https://azure.microsoft.com/free/?WT.mc_id=academic-105485-koreyst)။
+- Azure OpenAI အသုံးပြုခွင့် ရယူပါ။ [https://learn.microsoft.com/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai](https://learn.microsoft.com/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai?WT.mc_id=academic-105485-koreyst) သို့ သွား၍ အသုံးပြုခွင့် တင်သွင်းပါ။
 
   > [!NOTE]
-  > ဒီစာရေးချိန်မှာ Azure OpenAI ကို access ရဖို့အတွက် တောင်းဆိုရပါမယ်။
+  > ယခုအချိန်တွင် Azure OpenAI အသုံးပြုခွင့် ရရန် လျှောက်ထားရပါမည်။
 
-- Python ကို install လုပ်ပါ <https://www.python.org/>
-- Azure OpenAI Service resource တစ်ခုကို ဖန်တီးထားပါ။ [resource တစ်ခုကို ဖန်တီးပုံ](https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource?pivots=web-portal?WT.mc_id=academic-105485-koreyst) guide ကိုကြည့်ပါ။
+- Python ကို ထည့်သွင်းပါ <https://www.python.org/>
+- Azure OpenAI Service resource တစ်ခု ဖန်တီးပြီးဖြစ်ပါက ဒီလမ်းညွှန်အား လိုက်နာပါ [create a resource](https://learn.microsoft.com/azure/ai-services/openai/how-to/create-resource?pivots=web-portal?WT.mc_id=academic-105485-koreyst)။
 
-### API key နဲ့ endpoint ကိုရှာပါ
+### API key နဲ့ endpoint ကို ရှာဖွေခြင်း
 
-ဒီအချိန်မှာ သင့် `openai` library ကို အသုံးပြုဖို့ API key ကိုပြောပြရပါမယ်။ သင့် API key ကိုရှာဖို့ဆိုရင် Azure OpenAI resource ရဲ့ "Keys and Endpoint" အပိုင်းကိုသွားပြီး "Key 1" value ကို copy လုပ်ပါ။
+ဒီအချိန်တွင် `openai` library မှ ဘယ် API key ကို အသုံးပြုမလဲ ပြောပြရန်လိုအပ်သည်။ API key ရှာဖွေရန် အတွက် Azure OpenAI resource ထဲရှိ "Keys and Endpoint" ခေါင်းစဉ်သို့ သွားပြီး "Key 1" ကို ကူးယူပါ။
 
-![Azure Portal ရဲ့ Keys and Endpoint resource blade](https://learn.microsoft.com/azure/ai-services/openai/media/quickstarts/endpoint.png?WT.mc_id=academic-105485-koreyst)
+![Keys and Endpoint resource blade in Azure Portal](https://learn.microsoft.com/azure/ai-services/openai/media/quickstarts/endpoint.png?WT.mc_id=academic-105485-koreyst)
 
-အခု သင်အဲ့ဒီအချက်အလက်တွေကို copy လုပ်ပြီးရင် library တွေကိုအသုံးပြုဖို့ setup လုပ်ပါ။
+ဒီအချက်အလက်များ ကူးယူပြီးနောက် library များကို အသုံးပြုအတွက် ညွှန်ကြားပေးပါ.
 
 > [!NOTE]
-> သင့် API key ကို code ထဲကနေ ခွဲထားတာကောင်းပါတယ်။ Environment variables တွေကိုအသုံးပြုပြီး အဲ့ဒီအရာကိုလုပ်နိုင်ပါတယ်။
+> API key ကို ကိုးကားနေရာမှ သီးခြားထားသင့်သည်။ environment variable များအသုံးပြု၍ လုပ်ဆောင်နိုင်သည်။
 >
-> - Environment variable `OPENAI_API_KEY` ကို သင့် API key အဖြစ် set လုပ်ပါ။
+> - environment variable `OPENAI_API_KEY` ကို API key သို့ သတ်မှတ်ပါ။
 >   `export OPENAI_API_KEY='sk-...'`
 
-### Azure configuration ကို setup လုပ်ပါ
+### Azure အတွက် configuration ပြုလုပ်ခြင်း
 
-Azure OpenAI ကိုအသုံးပြုနေတယ်ဆိုရင် configuration ကို setup လုပ်ပုံက ဒီလိုပါ -
+Azure OpenAI (ယခု Microsoft Foundry ၏ အစိတ်အပိုင်း) ကို အသုံးပြုပါက configuration ပြုလုပ်နည်းမှာ အောက်ပါအတိုင်း ဖြစ်သည်။ `OpenAI` client ကို Azure OpenAI `/openai/v1/` endpoint သို့ ကျယ်ပြန့်စွာနှင့် သုံးနိုင်ပြီး Responses API အတွက် အတွက် `api_version` မလိုအပ်ပါ။
 
 ```python
-openai.api_type = 'azure'
-openai.api_key = os.environ["OPENAI_API_KEY"]
-openai.api_version = '2023-05-15'
-openai.api_base = os.getenv("API_BASE")
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AZURE_OPENAI_API_KEY"],
+    base_url=f"{os.environ['AZURE_OPENAI_ENDPOINT'].rstrip('/')}/openai/v1/",
+)
 ```
 
-အထက်မှာ ကျွန်တော်တို့ `api_type` ကို `azure` အဖြစ် set လုပ်ထားပြီး library ကို Azure OpenAI ကိုအသုံးပြုဖို့ပြောထားပါတယ်။
-- `api_key` က Azure Portal မှာရှိတဲ့ API key ဖြစ်ပါတယ်။
-- `api_version` က သင်အသုံးပြုချင်တဲ့ API ရဲ့ version ဖြစ်ပါတယ်။ ဒီစာရေးချိန်မှာ နောက်ဆုံး version က `2023-05-15` ဖြစ်ပါတယ်။
-- `api_base` က API ရဲ့ endpoint ဖြစ်ပါတယ်။ သင့် API key အနီးမှာ Azure Portal မှာရှာနိုင်ပါတယ်။
+အထက်မှာလည်း အောက်ပါများ သတ်မှတ်ထားသည်
 
-> [!NOTE] > `os.getenv` က environment variables တွေကိုဖတ်တဲ့ function တစ်ခုဖြစ်ပါတယ်။ `OPENAI_API_KEY` နဲ့ `API_BASE` လို environment variables တွေကို ဖတ်ဖို့အသုံးပြုနိုင်ပါတယ်။ ဒီ environment variables တွေကို သင့် terminal မှာ set လုပ်ပါ သို့မဟုတ် `dotenv` လို library တစ်ခုကိုအသုံးပြုပါ။
+- `api_key`၊ Azure Portal သို့မဟုတ် Microsoft Foundry portal ထဲက API key ဖြစ်သည်။
+- `base_url`၊ Foundry resource endpoint ဖြစ်ပြီး `/openai/v1/` ကို ပေါင်းထည့်ထားသည်။ stable v1 endpoint သည် OpenAI နှင့် Azure OpenAI နှစ်ခုလုံးတွင် `api_version` မလို အလုပ်လုပ်နိုင်သည်။
 
-## စာသားထုတ်လုပ်ခြင်း
+> [!NOTE] > `os.environ` သည် environment variable များ လုပ်ဆောင်ရေးဖြစ်သည်။ `AZURE_OPENAI_API_KEY` နှင့် `AZURE_OPENAI_ENDPOINT` စသည့် environment variables များကို terminal ထဲသို့ သတ်မှတ် သို့မဟုတ် `dotenv` စသည့် library ဖြင့် သတ်မှတ်နိုင်သည်။
 
-စာသားထုတ်လုပ်ဖို့ `Completion` class ကိုအသုံးပြုရပါတယ်။ ဥပမာ -
+## စာသား ထုတ်လုပ်ခြင်း
+
+Responses API ကို `responses.create` method ဖြင့် စာသားထုတ်လုပ်နိုင်သည်။ ဥပမာ -
 
 ```python
 prompt = "Complete the following: Once upon a time there was a"
 
-completion = openai.Completion.create(model="davinci-002", prompt=prompt)
-print(completion.choices[0].text)
+response = client.responses.create(
+    model="gpt-4o-mini",  # ဒါက သင့်မော်ဒယ်တပ်ဆင်မည့်နာမည် ဖြစ်ပါတယ်
+    input=prompt,
+    store=False,
+)
+print(response.output_text)
 ```
 
-အထက်က code မှာ ကျွန်တော်တို့ completion object တစ်ခုကိုဖန်တီးပြီး model နဲ့ prompt ကို pass လုပ်ပါတယ်။ ပြီးတော့ generated text ကို print လုပ်ပါတယ်။
+အထက်ပါကုဒ်တွင် response တစ်ခု ဖန်တီးပြီး အသုံးပြုမည့် model နှင့် prompt ကို ထည့်သွင်းသည်။ ထို့နောက် `response.output_text` မှ ချပြထားသော စာသား ထုတ်လုပ်မှုကို ပြသည်။
 
-### Chat completions
+### ပြောဆိုမှုများ မျိုးစုံ
 
-အခုထိ ကျွန်တော်တို့ `Completion` ကိုအသုံးပြုပြီး စာသားထုတ်လုပ်ပုံကိုကြည့်ခဲ့ပါတယ်။ ဒါပေမယ့် chatbot တွေအတွက်ပိုသင့်တော်တဲ့ `ChatCompletion` လို့ခေါ်တဲ့ class တစ်ခုရှိပါတယ်။ အဲ့ဒီကိုအသုံးပြုပုံက ဒီလိုပါ -
+Responses API သည် တစ်ချက်တည်း စာသားထုတ်လုပ်ခြင်းနှင့် multi-turn chatbot များရေးဆွဲရာတွင် သင့်တော်သည်။ `input` ထဲတွင် စကားပြောစာရင်းများ ထည့်သွင်းကာ ဆက်သွယ်မှုတည်ဆောက်နိုင်သည် -
 
 ```python
-import openai
+from openai import OpenAI
 
-openai.api_key = "sk-..."
+client = OpenAI(api_key="sk-...")
 
-completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "Hello world"}])
-print(completion.choices[0].message.content)
+response = client.responses.create(model="gpt-4o-mini", input="Hello world", store=False)
+print(response.output_text)
 ```
 
-ဒီ functionality အကြောင်းကို နောက်အခန်းမှာ ပိုမိုလေ့လာပါမယ်။
+ဤ အသုံးပြုမှုဆိုင်ရာ လုပ်ဆောင်မှုများကို နောက်ဆုံးအခန်းတွင် ဆက်လက် ရှင်းလင်းမည်။
 
-## လေ့ကျင့်ခန်း - သင့်ပထမဆုံးစာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်း
+## လေ့ကျင့်ခန်း - သင်၏ ပထမဆုံး စာသားထုတ်လုပ်ခြင်း app
 
-openai ကို setup လုပ်နဲ့ configure လုပ်ပုံကို သင်လေ့လာပြီးတဲ့အခါမှာ သင့်ပထမဆုံးစာသားထုတ်လုပ်မှုအက်ပလီကေးရှင်းကို တည်ဆောက်ဖို့အချိန်ရောက်ပါပြီ။ အက်ပလီကေးရှင်းကိုတည်ဆောက်ဖို့ အောက်ပါအဆင့်တွေကိုလိုက်နာပါ -
+openai ကို စတင် လေ့လာပြီး သင်၏ ပထမဆုံး စာသားထုတ်လုပ်ခြင်း app တည်ဆောက်ချိန် ဖြစ်ပါသည်။ ဤအက်ပလီကေးရှင်း တည်ဆောက်ရန် အောက်ပါအဆင့်များ လိုက်နာပါ -
 
-1. Virtual environment တစ်ခုဖန်တီးပြီး openai ကို install လုပ်ပါ -
+1. virtual environment တစ်ခု ဖန်တီးပြီး openai ထည့်သွင်းပါ။
 
    ```bash
    python -m venv venv
@@ -168,38 +175,37 @@ openai ကို setup လုပ်နဲ့ configure လုပ်ပုံက�
    ```
 
    > [!NOTE]
-   > Windows ကိုအသုံးပြုနေတယ်ဆိုရင် `venv\Scripts\activate` ကို `source venv/bin/activate` အစားရိုက်ပါ။
+   > Windows အသုံးပြုပါက `venv\Scripts\activate` ကို `source venv/bin/activate` အစား ရိုက်ထည့်ပါ။
 
    > [!NOTE]
-   > သင့် Azure OpenAI key ကို [https://portal.azure.com/](https://portal.azure.com/?WT.mc_id=academic-105485-koreyst) ကိုသွားပြီး `Open AI` ကိုရှာပါ၊ `Open AI resource` ကိုရွေးပြီး `Keys and Endpoint` ကိုရွေးပြီး `Key 1` value ကို copy လုပ်ပါ။
+   > Azure OpenAI key ကို [https://portal.azure.com/](https://portal.azure.com/?WT.mc_id=academic-105485-koreyst) သို့ သွား၍ `Open AI` ရှာပြီး `Open AI resource` အား ရွေးချယ်ပါ၊ ပြီးနောက် `Keys and Endpoint` ကိုနှိပ်ကူးယူပါ။
 
-1. _app.py_ ဖိုင်တစ်ခုဖန်တီးပြီး အောက်ပါ code ကိုထည့်ပါ -
+2. _app.py_ ဖိုင် တစ်ခု ဖန်တီးပြီး အောက်ပါကုဒ် ထည့်ပါ -
 
    ```python
-   import openai
+   import os
+   from openai import OpenAI
 
-   openai.api_key = "<replace this value with your open ai key or Azure OpenAI key>"
-
-   openai.api_type = 'azure'
-   openai.api_version = '2023-05-15'
-   openai.api_base = "<endpoint found in Azure Portal where your API key is>"
+   client = OpenAI(
+       api_key="<replace this value with your Azure OpenAI key>",
+       base_url="<endpoint found in Azure Portal>/openai/v1/",
+   )
    deployment_name = "<deployment name>"
 
-   # add your completion code
+   # သင့်ပြီးစီးမှုကုဒ်ကို ထည့်ပါ
    prompt = "Complete the following: Once upon a time there was a"
-   messages = [{"role": "user", "content": prompt}]
 
-   # make completion
-   completion = openai.chat.completions.create(model=deployment_name, messages=messages)
+   # Responses API ကို အသုံးပြု၍ တောင်းဆိုချက် တစ်ခု ပြုလုပ်ပါ
+   response = client.responses.create(model=deployment_name, input=prompt, store=False)
 
-   # print response
-   print(completion.choices[0].message.content)
+   # တုံ့ပြန်ချက်ကို ပုံနှိပ်ပါ
+   print(response.output_text)
    ```
 
    > [!NOTE]
-   > Azure OpenAI ကိုအသုံးပြုနေတယ်ဆိုရင် `api_type` ကို `azure` အဖြစ် set လုပ်ပြီး `api_key` ကို သင့် Azure OpenAI key အဖြစ် set လုပ်ပါ။
+   > OpenAI (Azure မဟုတ်) အသုံးပြုပါက `client = OpenAI(api_key="<replace this value with your OpenAI key>")` (base_url မပါ) သုံးပြီး `gpt-4o-mini` ကဲ့သို့ model name ထည့်သွင်းပါ။
 
-   သင် output ကို အောက်ပါလိုမျိုးတွေ့ရပါမယ် -
+   အောက်ပါ Output တူ အဖြေကို မြင်ရမည် -
 
    ```output
     very unhappy _____.
@@ -207,25 +213,25 @@ openai ကို setup လုပ်နဲ့ configure လုပ်ပုံက�
    Once upon a time there was a very unhappy mermaid.
    ```
 
-## Prompt အမျိုးမျိုး၊ အမျိုးမျိုးသောအရာများအတွက်
+## prompt မျိုးစုံ၊ အလုပ်အမျိုးမျိုးအတွက်
 
-အခု သင် prompt ကိုအသုံးပြုပြီး စာသားထုတ်လုပ်ပုံကိုကြည့်ပြီးပြီ။ သင် modify လုပ်ပြီး text အမျိုးမျိုးကိုထုတ်လုပ်ဖို့ program တစ်ခု run လုပ်နိုင်ပါပြီ။
+ယခု သင် prompt အသုံးပြုပြီး စာသား ထုတ်လုပ်နည်း သိရှိသွားပြီး ဖြစ်သည်။ သင်သည် ပြင်ဆင်နိုင်ပြီး အမျိုးအစားကွဲပြားသော စာသားများ ထုတ်လုပ်နိုင်မည် programs တစ်ခု ရှိပြီ ဖြစ်သည်။
 
-Prompt တွေကို task အမျိုးမျိုးအတွက် အသုံးပြုနိုင်ပါတယ်။ ဥပမာ -
+prompt များသည် အလုပ်အမျိုးမျိုးအတွက် အသုံးပြုနိုင်သည်။ ဥပမာ -
 
-- **စာသားအမျိုးအစားတစ်ခုကိုထုတ်လုပ်ပါ**။ ဥပမာ - ကဗျာ၊ quiz အတွက်မေးခွန်းတွေ စသည်ဖြင့်။
-- **အချက်အလက်ရှာဖွေခြင်း**။ Prompt တွေကို အသုံးပြုပြီး အချက်အလက်တွေကိုရှာဖွေနိုင်ပါတယ်။ ဥပမာ 'What does CORS mean in web development?'.
-- **Code ထုတ်လုပ်ခြင်း**။ Prompt တွေကိုအသုံးပြုပြီး code ကိုထုတ်လုပ်နိုင်ပါတယ်။ ဥပမာ email တွေကို validate လုပ်ဖို့ regular expression တစ်ခုကိုတည်ဆောက်ခြင်း သို့မဟုတ် web app တစ်ခုလို program တစ်ခုလုံးကိုတည်ဆောက်ခြင်း။
+- **စာသားတစ်မျိုး အထုတ်သဖြင့် ထုတ်လုပ်ခြင်း**။ သီချင်း၊ မေးခွန်း စသည်ကို ထုတ်လုပ်နိုင်သည်။
+- **အချက်အလက် ရှာဖွေမှု**။ prompt တွေ ကို အသုံးပြုပြီး နောက်ထပ် data ကို ရှာဖွေနိုင်သည်။ ဥပမာ 'What does CORS mean in web development?' ဆိုသည်နှင့် စသည်။
+- **ကုဒ် ထုတ်လုပ်ခြင်း**။ စကားပြော prompt တစ်ခု ဖြင့် ကုဒ်ရေးဆွဲနိုင်သည်။ ဥပမာ email ကို စစ်ဆေးသုံးစွဲရန် regular expression ဖြင့် ဖန်တီးခြင်း၊ ဒါမှ မဟုတ် အက်ပလီကေးရှင်း တစ်ခုလုံး ဖန်တီးခြင်း။
 
-## ပိုမိုအသုံးဝင်တဲ့အသုံးချမှု - အစားအစာချက်ပြုတ်နည်းထုတ်လုပ်ခြင်း
+## အသုံးချနိုင်သည့် နမူနာ - ဟင်းချက်နည်း ထုတ်လုပ်သူ
 
-သင်အိမ်မှာရှိတဲ့အစားအစာတွေကို အသုံးပြုပြီး တစ်ခုခုချက်ချင်တယ်ဆိုပါစို့။ အဲ့ဒီအတွက် အစားအစာချက်ပြုတ်နည်းတစ်ခုလိုအပ်ပါတယ်။ အစားအစာချက်ပြုတ်နည်းတွေကိုရှာဖို့ search engine တစ်ခုကိုအသုံးပြုနိုင်သလို LLM ကိုလည်းအသုံးပြုနိုင်ပါတယ်။
+မိမိဆိုင်ရာ ပစ္စည်းတွေ ရှိပြီး အစားအသောက် ပြုလုပ်ချင်လျှင် အသုံးပြုနိုင်တဲ့ ဟင်းချက်နည်းလိုအပ်သည်။ ဟင်းချက်နည်း ရှာဖွေရန် search engine သုံးပါ၊ ဒါမှ မဟုတ် LLM ကို အသုံးပြုပါ။
 
-သင် prompt ကို ဒီလိုရေးနိုင်ပါတယ် -
+Prompt ကို အောက်ပါအတိုင်း ရေးနိုင်သည် -
 
-> "Show me 5 recipes for a dish with the following ingredients: chicken, potatoes, and carrots. Per recipe, list all the ingredients used"
+> "Chicken, potatoes, carrots ပါဝင်သည့် ဟင်းမုန့်အမျိုးအစား ၅ ခုပြပါ။ ဟင်းချက်နည်းတစ်ခုစီအတွက် ပါဝင်သော ပစ္စည်းအားလုံး ကို ကျေးဇူးပြု၍ စာရင်းပြုစုပါ။"
 
-အထက်ပါ prompt ကိုပေးလိုက်တဲ့အခါမှာ သင်ရရှိနိုင်တဲ့အဖြေက -
+အရင် prompt ပေးသလို ဒီလို အဖြေ ပြန်လာနိုင်သည် -
 
 ```output
 1. Roasted Chicken and Vegetables:
@@ -289,16 +295,16 @@ Ingredients:
 - 1 teaspoon dried oregano
 ```
 
-ဒီရလဒ်ကောင်းပါတယ်၊ ကျွန်တော်တို့ဘာချက်ရမလဲဆိုတာသိပါတယ်။ ဒီအချိန်မှာ အသုံးဝင်တဲ့တိုးတက်မှုတွေက -
+ဒီအဖြေက အရမ်းကောင်းပါတယ်၊ မိမိချက်ဖို့ ကောင်းမွန်ပြီ။ ဒီအချိန်မှာ အဆင်ပြေသမားများက -
 
-- သင်မကြိုက်တဲ့အစားအစာတွေ သို့မဟုတ် အာလူးပျက်တဲ့အစားအစာတွေကို ဖယ်ထုတ်ခြင်း။
-- အိမ်မှာမရှိတဲ့အစားအစာတွေကို ဝယ်ဖို့ shopping list တစ်ခုထုတ်လုပ်ခြင်း။
+- ကိုကြိုက်သော် သို့မဟုတ် အစာအဆာဖြစ်သူ ပစ္စည်း မပါဝင်စေချင်မှု။
+- ပစ္စည်းအားလုံး မရှိမှန်း သတိပြုပြီး စျေးဝယ် စာရင်း ထုတ်ပေးရန်။
 
-အထက်ပါအခြေအနေတွေအတွက် prompt တစ်ခုထပ်ထည့်ပါ -
+အထက်ပါ သဘောတူချက်များအတွက် prompt အသစ် တစ်ခုပြုလုပ်ပါ -
 
 > "Please remove recipes with garlic as I'm allergic and replace it with something else. Also, please produce a shopping list for the recipes, considering I already have chicken, potatoes and carrots at home."
 
-အခု သင့်ရလဒ်အသစ်က -
+ယခု အဖြေ အသစ် ရရှိပြီ၊ ဟင် -
 
 ```output
 1. Roasted Chicken and Vegetables:
@@ -365,39 +371,176 @@ Shopping List:
 - Pepper
 ```
 
-ဒါက သင့်ရဲ့ အစားအစာချက်ပြုတ်နည်း ၅ ခုဖြစ်ပြီး garlic မပါဘဲ ရရှိပါတယ်။ အိမ်မှာရှိပြီးသားအစားအစာတွေကိုထည့်သွင်းပြီး shopping list ကိုလည်းရရှိပါတယ်။
+ဒါဟာ သင့်ဟင်းချက်နည်း ၅ ခုပဲ ဖြစ်ပြီး ကြက်သွန်ဖြူ မပါရှိပါ။ သင့်အိမ်ရှိ ဆိုသလို စျေးဝယ်စာရင်းပါ ရှိသည်။
 
-## လေ့ကျင့်ခန်း - အစားအစာချက်ပြုတ်နည်းထုတ်လုပ်ခြင်း
+## လေ့ကျင့်ခန်း - ဟင်းချက်နည်း ထုတ်လုပ်သူ တည်ဆောက်ခြင်း
 
-အခု ကျွန်တော်တို့အခြေအနေတစ်ခုကို ပြသပြီးပြီဆိုတော့ အဲ့ဒီအ
+ပြသထားသည့် အခြေအနေ ကို အကောင်အထည် ဖော်ရန် ကုဒ်ရေးပါ။ အောက်ပါအဆင့်များ လိုက်နာပါ -
+
+1. ရှိပြီးသား _app.py_ ဖိုင်ကို စတင်အခြေခံအနေဖြင့် သုံးပါ။
+1. `prompt` ပြောင်းလဲ ပြင်ဆင်ပြီး အောက်ပါ ကုဒ်အတိုင်း ပြောင်းတင်ပါ -
+
+   ```python
+   prompt = "Show me 5 recipes for a dish with the following ingredients: chicken, potatoes, and carrots. Per recipe, list all the ingredients used"
+   ```
+
+   အခု၊ ကုဒ်ကို ပြေးရင် အောက်ပါ အဖြေ မျိုး ရှိလာမည်။
+
+   ```output
+   -Chicken Stew with Potatoes and Carrots: 3 tablespoons oil, 1 onion, chopped, 2 cloves garlic, minced, 1 carrot, peeled and chopped, 1 potato, peeled and chopped, 1 bay leaf, 1 thyme sprig, 1/2 teaspoon salt, 1/4 teaspoon black pepper, 1 1/2 cups chicken broth, 1/2 cup dry white wine, 2 tablespoons chopped fresh parsley, 2 tablespoons unsalted butter, 1 1/2 pounds boneless, skinless chicken thighs, cut into 1-inch pieces
+   -Oven-Roasted Chicken with Potatoes and Carrots: 3 tablespoons extra-virgin olive oil, 1 tablespoon Dijon mustard, 1 tablespoon chopped fresh rosemary, 1 tablespoon chopped fresh thyme, 4 cloves garlic, minced, 1 1/2 pounds small red potatoes, quartered, 1 1/2 pounds carrots, quartered lengthwise, 1/2 teaspoon salt, 1/4 teaspoon black pepper, 1 (4-pound) whole chicken
+   -Chicken, Potato, and Carrot Casserole: cooking spray, 1 large onion, chopped, 2 cloves garlic, minced, 1 carrot, peeled and shredded, 1 potato, peeled and shredded, 1/2 teaspoon dried thyme leaves, 1/4 teaspoon salt, 1/4 teaspoon black pepper, 2 cups fat-free, low-sodium chicken broth, 1 cup frozen peas, 1/4 cup all-purpose flour, 1 cup 2% reduced-fat milk, 1/4 cup grated Parmesan cheese
+
+   -One Pot Chicken and Potato Dinner: 2 tablespoons olive oil, 1 pound boneless, skinless chicken thighs, cut into 1-inch pieces, 1 large onion, chopped, 3 cloves garlic, minced, 1 carrot, peeled and chopped, 1 potato, peeled and chopped, 1 bay leaf, 1 thyme sprig, 1/2 teaspoon salt, 1/4 teaspoon black pepper, 2 cups chicken broth, 1/2 cup dry white wine
+
+   -Chicken, Potato, and Carrot Curry: 1 tablespoon vegetable oil, 1 large onion, chopped, 2 cloves garlic, minced, 1 carrot, peeled and chopped, 1 potato, peeled and chopped, 1 teaspoon ground coriander, 1 teaspoon ground cumin, 1/2 teaspoon ground turmeric, 1/2 teaspoon ground ginger, 1/4 teaspoon cayenne pepper, 2 cups chicken broth, 1/2 cup dry white wine, 1 (15-ounce) can chickpeas, drained and rinsed, 1/2 cup raisins, 1/2 cup chopped fresh cilantro
+   ```
+
+   > သတိပြုရန်၊ သင့် LLM သည် non-deterministic ဖြစ်ပြီး အချိန်တိုင်းအခြေအနေပေါ် မူတည်၍ အဖြေ မတူကြာနိုင်ပါသည်။
+
+   ကောင်းမွန်ပါတယ်၊ ပိုမိုကောင်းမွန်အောင် ပြင်ဆင်မှု လုပ်ကြရအောင်။ ပြင်ဆင်မှုများမှာ ဟင်းပွဲအရေအတွက်နှင့် ပစ္စည်းများ ရွေးချယ်မှု ပြောင်းလဲနိုင်စေရန် ဖြစ်သည်။
+
+1. ကုဒ်ကို အောက်ပါအတိုင်း ပြင်ဆင်ပါ -
+
+   ```python
+   no_recipes = input("No of recipes (for example, 5): ")
+
+   ingredients = input("List of ingredients (for example, chicken, potatoes, and carrots): ")
+
+   # မုန့်ချက်နည်းများ၏အရေအတွက်ကို prompt နှင့် ပါဝင်ပစ္စည်းများထဲသို့ အတွဲထည့်ပါ။
+   prompt = f"Show me {no_recipes} recipes for a dish with the following ingredients: {ingredients}. Per recipe, list all the ingredients used"
+   ```
+
+   စမ်းသပ်မှုပြုမှာ ဒီလို ဖြစ်နိုင်သည် -
+
+   ```output
+   No of recipes (for example, 5): 3
+   List of ingredients (for example, chicken, potatoes, and carrots): milk,strawberries
+
+   -Strawberry milk shake: milk, strawberries, sugar, vanilla extract, ice cubes
+   -Strawberry shortcake: milk, flour, baking powder, sugar, salt, unsalted butter, strawberries, whipped cream
+   -Strawberry milk: milk, strawberries, sugar, vanilla extract
+   ```
+
+### စစ်ထုတ်ခြင်းနှင့် စျေးဝယ်စာရင်း ထည့်ခြင်းဖြင့် တိုးတက် ပြောင်းလဲမှု
+
+ယခင်က အလုပ်လုပ်သော app တစ်ခု ရှိပြီး ယခုမှာ အသုံးပြုသူ ထံမှ ပြန်ဝင်တဲ့ အချက်အလက်များဖြင့် ဟင်းချက်နည်းအရေအတွက် နှင့် ပါဝင်ပစ္စည်းများကို လွယ်ကူပြောင်းလဲနိုင်သည်။
+
+ပိုမိုတိုးတက်အောင် လုပ်လိုပါက အောက်ပါ အချက်များ လိုအပ်သည် -
+
+- **ပစ္စည်းများကို စစ်ထုတ်ခြင်း**။ မကြိုက်သော သို့မဟုတ် အစာအဆာဖြစ်သော ပစ္စည်းများ ကို ဖယ်ရှားနိုင်စေရန်။  ဤအတွက် စစ်ထုတ်မှု အခြေအနေ prompt အဆုံးတွင် ထည့်သွင်း ပြင်ဆင်နိုင်ပါသည် -
+
   ```python
-  old_prompt_result = completion.choices[0].message.content
+  filter = input("Filter (for example, vegetarian, vegan, or gluten-free): ")
+
+  prompt = f"Show me {no_recipes} recipes for a dish with the following ingredients: {ingredients}. Per recipe, list all the ingredients used, no {filter}"
+  ```
+
+  အထက်မှာ prompt အဆုံးတွင် `{filter}` ထည့်သွင်းပြီး အသုံးပြုသူထံမှ filter တန်ဖိုး သိမ်းဆည်းထားသည်။
+
+  ဖော်ပြမှုပုံစံတစ်ခုမှာ အောက်ပါအတိုင်း ဖြစ်နိုင်သည် -
+
+  ```output
+  No of recipes (for example, 5): 3
+  List of ingredients (for example, chicken, potatoes, and carrots): onion,milk
+  Filter (for example, vegetarian, vegan, or gluten-free): no milk
+
+  1. French Onion Soup
+
+  Ingredients:
+
+  -1 large onion, sliced
+  -3 cups beef broth
+  -1 cup milk
+  -6 slices french bread
+  -1/4 cup shredded Parmesan cheese
+  -1 tablespoon butter
+  -1 teaspoon dried thyme
+  -1/4 teaspoon salt
+  -1/4 teaspoon black pepper
+
+  Instructions:
+
+  1. In a large pot, sauté onions in butter until golden brown.
+  2. Add beef broth, milk, thyme, salt, and pepper. Bring to a boil.
+  3. Reduce heat and simmer for 10 minutes.
+  4. Place french bread slices on soup bowls.
+  5. Ladle soup over bread.
+  6. Sprinkle with Parmesan cheese.
+
+  2. Onion and Potato Soup
+
+  Ingredients:
+
+  -1 large onion, chopped
+  -2 cups potatoes, diced
+  -3 cups vegetable broth
+  -1 cup milk
+  -1/4 teaspoon black pepper
+
+  Instructions:
+
+  1. In a large pot, sauté onions in butter until golden brown.
+  2. Add potatoes, vegetable broth, milk, and pepper. Bring to a boil.
+  3. Reduce heat and simmer for 10 minutes.
+  4. Serve hot.
+
+  3. Creamy Onion Soup
+
+  Ingredients:
+
+  -1 large onion, chopped
+  -3 cups vegetable broth
+  -1 cup milk
+  -1/4 teaspoon black pepper
+  -1/4 cup all-purpose flour
+  -1/2 cup shredded Parmesan cheese
+
+  Instructions:
+
+  1. In a large pot, sauté onions in butter until golden brown.
+  2. Add vegetable broth, milk, and pepper. Bring to a boil.
+  3. Reduce heat and simmer for 10 minutes.
+  4. In a small bowl, whisk together flour and Parmesan cheese until smooth.
+  5. Add to soup and simmer for an additional 5 minutes, or until soup has thickened.
+  ```
+
+  မြင်နိုင်သလို ၊ အက်乳ထဲ သောက်သောဟင်းချက်များကို ဖယ်ရှားထားသည်။ Lactose intolerance ရှိသူများအတွက် ချိ့စ်ပါ ဟင်းချက်များကိုလည်း ဖယ်ရှားနိုင်ရန် လိုအပ်သည်၊ ထို့ကြောင့် ရှင်းလင်းစွာ အဝိုင်းဖွဲ့တင်ပြရန် လိုအပ်ပါသည်။
+
+
+- **စျေးဝယ်စာရင်းတစ်ခု ရေးဆွဲပါ**။ ကျွန်တော်တို့မှာ အိမ်မှာရှိပြီးသား ပစ္စည်းတွေကို ထည့်သွင်းစဉ်းစားပြီး စျေးဝယ်စာရင်းတစ်ခု ရေးဆွဲချင်ပါတယ်။
+
+  ဒီဖွင့်ပြောချက်အတွက် ကျွန်တော်တို့အနေဖြင့် တစ်ချက်တည်းမှာပဲ အားလုံးကို ဖြေရှင်းဖို့ကြိုးစားလို့ရပေမဲ့ နှစ်ချက်ခွဲပြီးခွဲဝေဖို့လည်း ရှိပါတယ်။ နောက်အဆင့်နဲ့စမ်းကြည့်ပါမယ်။ ဒီမှာ နောက်ထပ် prompt တစ်ခု ထည့်သွင်းဖို့ အကြံပြုထားပေမဲ့ အလုပ်ဖြစ်ဖို့ အရင် prompt ရဲ့ရလဒ်ကို နောက် prompt ရဲ့ context အဖြစ် ထည့်သွင်းဖို့ လိုအပ်ပါတယ်။
+
+  ပထမ prompt မှရလဒ်ကို print ထုတ်နေတဲ့ code အပိုင်းကိုရှာပြီး အောက်ပါ code ကို ထည့်သွင်းပါ။
+
+  ```python
+  old_prompt_result = response.output_text
   prompt = "Produce a shopping list for the generated recipes and please don't include ingredients that I already have."
 
   new_prompt = f"{old_prompt_result} {prompt}"
-  messages = [{"role": "user", "content": new_prompt}]
-  completion = openai.Completion.create(engine=deployment_name, messages=messages, max_tokens=1200)
+  response = client.responses.create(model=deployment_name, input=new_prompt, max_output_tokens=1200, store=False)
 
-  # print response
+  # တုံ့ပြန်ချက်ကို ပရင့်ထုတ်ပါ
   print("Shopping list:")
-  print(completion.choices[0].message.content)
+  print(response.output_text)
   ```
 
-  အောက်ပါအချက်များကို သတိပြုပါ:
+  အောက်ပါအချက်တွေကို သတိပြုပါ။
 
-  1. ပထမဆုံး prompt မှရလဒ်ကို အသစ်သော prompt ထဲသို့ ထည့်သွင်းပြီး prompt အသစ်တစ်ခုကို တည်ဆောက်နေပါသည်။
+  1. ပထမ prompt ကရလဒ်ကို နောက် prompt ထဲကို ထည့်ပြီး prompt အသစ်တစ်ခု တည်ဆောက်နေပါတယ်။
 
      ```python
      new_prompt = f"{old_prompt_result} {prompt}"
      ```
 
-  1. အသစ်သောတောင်းဆိုမှုတစ်ခုကို ပြုလုပ်ပါ၊ သို့သော် ပထမဆုံး prompt တွင် တောင်းဆိုခဲ့သော token အရေအတွက်ကိုလည်း ထည့်သွင်းစဉ်းစားပါ၊ ထို့ကြောင့် ဒီတစ်ခါမှာတော့ `max_tokens` ကို 1200 ဟု ပြောပါ။
+  1. ငါတို့ အသစ်တောင်းဆိုမှုတစ်ချက် ပြုလုပ်ပါတယ်၊ ဒါပေမဲ့ ပထမ prompt မှာ တောင်းခဲ့တဲ့ token အရေအတွက်ကိုလည်း ထည့်သွင်းစဉ်းစားပြီး ဒီတစ်ခါ `max_output_tokens` ကို ၁၂၀၀ လို့ပြောပါတယ်။
 
      ```python
-     completion = openai.Completion.create(engine=deployment_name, prompt=new_prompt, max_tokens=1200)
+     response = client.responses.create(model=deployment_name, input=new_prompt, max_output_tokens=1200, store=False)
      ```
 
-     ဒီ code ကို စမ်းကြည့်ပြီးနောက်မှာတော့ အောက်ပါ output ကို ရရှိလာပါပြီ:
+     ဒီ code ကို စမ်းသပ်သုံးစွဲတဲ့အခါ အောက်ပါ output ကို ရလဒ်အဖြစ် ရောက်ရှိပါပြီ။
 
      ```output
      No of recipes (for example, 5): 2
@@ -411,69 +554,71 @@ Shopping List:
      -Flour, baking powder, baking soda, salt, sugar, egg, buttermilk, butter, apple, nutmeg, cinnamon, allspice
      ```
 
-## သင့် setup ကို တိုးတက်အောင်လုပ်ပါ
+## သင့် Setup ကိုတိုးတက်ကောင်းမွန်လာစေမယ့်အချက်များ
 
-အခုအချိန်ထိ ကျွန်တော်တို့မှာ အလုပ်လုပ်တဲ့ code ရှိပြီးသားဖြစ်ပေမယ့် အချို့အရာတွေကို ပိုမိုကောင်းမွန်အောင် ပြုပြင်သင့်ပါတယ်။ ကျွန်တော်တို့ ပြုလုပ်သင့်တဲ့အရာတွေကတော့:
+ယနေ့အထိ ရရှိထားတာက အလုပ်လုပ်တယ်၊ ဒါပေမဲ့ နောက်ထပ် တိုးတက်လာစေဖို့ ပြင်ဆင်သင့်တဲ့ အချက်အချို့ ရှိပါတယ်။ ကျွန်တော်တို့လုပ်သင့်တာတွေကတော့ -
 
-- **Secrets ကို code မှ ခွဲထုတ်ပါ**, API key ကဲ့သို့သော Secrets တွေကို code ထဲမှာ မထည့်သင့်ပါဘူး။ Secrets တွေကို လုံခြုံတဲ့နေရာမှာ သိမ်းဆည်းထားသင့်ပါတယ်။ Secrets တွေကို code မှ ခွဲထုတ်ဖို့အတွက် environment variables တွေကို အသုံးပြုနိုင်ပြီး `python-dotenv` ကဲ့သို့သော library တွေကို အသုံးပြု၍ ဖိုင်ထဲမှ load လုပ်နိုင်ပါတယ်။ ဒါကို code မှာ ဘယ်လိုလုပ်ရမလဲဆိုတာကတော့:
+- **Code ကနေ secrets တွေကို ချွတ်ထုတ်ပါ**၊ အဖြစ် API key များကဲ့သို့သော secrets သည် code ထဲမှာမရှိသင့်ပါ၊ လုံခြုံစိတ်ချရသောနေရာတွင် သိမ်းဆည်းထားသင့်သည်။ Code ကနေ secrets ကို ခွဲထုတ်ဖို့အတွက် environment variables နဲ့ `python-dotenv` ကဲ့သို့သော library များကို ဖိုင်မှ load ရန် အသုံးပြုနိုင်ပါတယ်။ ကုဒ်အတွင်း ဒီလိုပြသပါမယ်။
 
-  1. `.env` ဖိုင်တစ်ခုကို အောက်ပါအကြောင်းအရာများဖြင့် ဖန်တီးပါ:
+  1. အောက်ပါ အကြောင်းအရာပါ .env ဖိုင်တစ်ခု ဖန်တီးပါ။
 
      ```bash
      OPENAI_API_KEY=sk-...
      ```
 
-     > Azure အတွက်တော့ အောက်ပါ environment variables တွေကို သတ်မှတ်ရန်လိုအပ်ပါသည်:
+     > သတိပေးချက်၊ Microsoft Foundry တွေရှိ Azure OpenAI အတွက် အောက်ပါ environment variables များကို သတ်မှတ်ပေးသင့်ပါတယ်။
 
      ```bash
-     OPENAI_API_TYPE=azure
-     OPENAI_API_VERSION=2023-05-15
-     OPENAI_API_BASE=<replace>
+     AZURE_OPENAI_API_KEY=<replace>
+     AZURE_OPENAI_ENDPOINT=<replace>
+     AZURE_OPENAI_API_VERSION=2024-10-21
      ```
 
-     Code မှာတော့ environment variables တွေကို အောက်ပါအတိုင်း load လုပ်ပါ:
+     Code ထဲမှာ environment variables များကို အောက်ပါနည်းဖြင့် load လုပ်ပါ။
 
      ```python
+     import os
      from dotenv import load_dotenv
+     from openai import OpenAI
 
      load_dotenv()
 
-     openai.api_key = os.environ["OPENAI_API_KEY"]
+     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
      ```
 
-- **Token အရေအတွက်အကြောင်း**. ကျွန်တော်တို့လိုချင်တဲ့ text ကို ဖန်တီးဖို့အတွက် token အရေအတွက်ကို စဉ်းစားသင့်ပါတယ်။ Token တွေက ပိုက်ဆံကုန်ကျစေပါတယ်၊ ထို့ကြောင့် အလားအလာရှိသမျှ token အရေအတွက်ကို သက်သာစွာ အသုံးပြုဖို့ ကြိုးစားသင့်ပါတယ်။ ဥပမာအားဖြင့် prompt ကို အနည်းဆုံး token တွေကို အသုံးပြုနိုင်အောင် ပြောဆိုနိုင်ပါသလား?
+- **Token ရဲ့ရေတွက်အကြောင်း**။ ကျွန်တော်တို့ လိုချင်တဲ့စာသား ထွက်ရှိဖို့ အတွက် ဘယ်လောက် token လိုအပ်မလဲ ဆိုတာ စဉ်းစားသင့်ပါတယ်။ Token များမှာ စျေးပေါက်မှုရှိတဲ့အတွက် အလကား token မဖြုတ်အောင် စဉ်းစားသင့်ပါတယ်။ ဥပမာနဲ့ဆို prompt ကို ဘယ်လိုဖော်ပြရင် token အနည်းငယ်သုံးနိုင်မယ်ဆိုတာစဉ်းစားပါ။
 
-  Token တွေကို ပြောင်းလဲဖို့ `max_tokens` parameter ကို အသုံးပြုနိုင်ပါတယ်။ ဥပမာအားဖြင့် 100 tokens ကို အသုံးပြုချင်တယ်ဆိုရင်တော့:
-
-  ```python
-  completion = client.chat.completions.create(model=deployment, messages=messages, max_tokens=100)
-  ```
-
-- **Temperature ကို စမ်းသပ်ခြင်း**. Temperature ဆိုတာ ကျွန်တော်တို့ အခုထိ မပြောခဲ့သေးပေမယ့် ကျွန်တော်တို့ရဲ့ program အလုပ်လုပ်ပုံအပေါ် အရေးကြီးတဲ့ context တစ်ခုဖြစ်ပါတယ်။ Temperature value ပိုမြင့်လျှင် output ပိုမို random ဖြစ်လာပါမည်။ အပြန်အလှန် Temperature value ပိုနိမ့်လျှင် output ပိုမိုခန့်မှန်းနိုင်သော ဖြစ်လာပါမည်။ Output မှာ အမျိုးမျိုးပြောင်းလဲမှုရှိစေချင်သလား မရှိစေချင်သလား စဉ်းစားပါ။
-
-  Temperature ကို ပြောင်းလဲဖို့ `temperature` parameter ကို အသုံးပြုနိုင်ပါတယ်။ ဥပမာအားဖြင့် temperature ကို 0.5 သတ်မှတ်ချင်တယ်ဆိုရင်တော့:
+  Token အသုံးပြုမှုကို ပြောင်းလဲရန် `max_output_tokens` parameter ကိုအသုံးပြုပေးနိုင်ပါတယ်။ ဥပမာ token ၁၀၀ သုံးချင်လျှင် အောက်ပါအတိုင်းရေးနိုင်ပါတယ်။
 
   ```python
-  completion = client.chat.completions.create(model=deployment, messages=messages, temperature=0.5)
+  response = client.responses.create(model=deployment, input=prompt, max_output_tokens=100, store=False)
   ```
 
-  > သတိပြုပါ၊ 1.0 နီးစပ်လျှင် output ပိုမိုအမျိုးမျိုးပြောင်းလဲမှုရှိပါမည်။
+- **temperature ကိုစမ်းသပ်ခြင်း**။ Temperature ဆိုတာ ခုတိုင်မပြောဖူးပေမဲ့ ကျွန်တော်တို့ program လုပ်ဆောင်ပုံအတွက် အရေးပါတဲ့ context တစ်ခုပါ။ Temperature ဆွဲတယ်ဆို output ရဲ့ ပုံစံ ပိုမို ယုံကြည်လို့ရမလား မယုံကြည်နိုင်လောက်အောင် ရောက်နေပုံမျိုး ဖြစ်ပါတယ်။ Temperature မြင့်လာတိုင်း output ပို ရောထွေးမယ်၊ temperature နည်းလာတိုင်း output အတိအကျ ရှိလာမယ်။ output မှာ လွတ်လပ်ချွတ်ချော်မှုရှိချင်တာရှိမရှိ စဉ်းစားပါ။
 
-## အလုပ်ပေးခြင်း
+  temperature ကို ပြောင်းလဲချင်ရင် `temperature` parameter ကိုအသုံးပြုပေးနိုင်ပါတယ်။ ဥပမာ temperature 0.5 သတ်မှတ်ချင်ရင် အောက်ပါအတိုင်းရေးနိုင်ပါတယ်။
 
-ဒီအလုပ်ပေးမှုအတွက် သင်တစ်ခုခုကို ဖန်တီးနိုင်ပါတယ်။
+  ```python
+  response = client.responses.create(model=deployment, input=prompt, temperature=0.5, store=False)
+  ```
 
-အောက်ပါအကြံပြုချက်များကို ကြည့်ပါ:
+  > သတိပေးချက်၊ 1.0 နီးကျင်လာသလောက် output ပိုမိုကွဲပြားသွားပါသည်။
 
-- Recipe generator app ကို ပိုမိုကောင်းမွန်အောင် ပြုပြင်ပါ။ Temperature value တွေကို စမ်းသပ်ပြီး prompt တွေကို ပြောင်းလဲကြည့်ပါ။
-- "Study buddy" တစ်ခုကို ဖန်တီးပါ။ ဒီ app က Python ကဲ့သို့သော အကြောင်းအရာတစ်ခုအကြောင်းကို မေးခွန်းများကို ဖြေဆိုနိုင်ရမည်။ ဥပမာအားဖြင့် "Python မှာ အကြောင်းအရာတစ်ခုက ဘာလဲ?" ဆိုပြီး prompt တွေကို အသုံးပြုနိုင်ပါတယ်၊ ဒါမှမဟုတ် "အကြောင်းအရာတစ်ခုအတွက် code ကို ပြပါ" ဆိုတဲ့ prompt ကို အသုံးပြုနိုင်ပါတယ်။
-- History bot, သမိုင်းကို အသက်ဝင်အောင်လုပ်ပါ၊ bot ကို သမိုင်းဆိုင်ရာ လူပုဂ္ဂိုလ်တစ်ဦးအဖြစ် သတ်မှတ်ပြီး သူ့ရဲ့ဘဝနှင့်အချိန်ကာလအကြောင်းကို မေးခွန်းများမေးပါ။
+## အလုပ်တာဝန်
+
+ဒီတာဝန်အတွက် သင်ဘာလုပ်ချင်သလဲကို ရွေးချယ်နိုင်ပါတယ်။
+
+အကြံပြုချက်အချို့မှာ -
+
+- Recipe generator app ကိုပို၍ တိုးတက်အောင် ပြင်ဆင်ပါ။ temperature တန်ဖိုးများနဲ့ prompt များကို ကစားပြီး ဘာရနိုင်မလဲ ကြည့်ပါ။
+- "study buddy" app တစ်ခု တည်ဆောက်ပါ။ ဥပမာ Topics တစ်ခုအကြောင်းအဖြေများပေးနိုင်တဲ့ Python အကြောင်းဖြစ်နိုင်ပါတယ်၊ “Python မှ သီးသန့်အကြောင်းဘာလဲ?” ကဲ့သို့ prompt များ သို့မဟုတ် "သီးသန့် topic အတွက် code ပြပါ" ကဲ့သို့ prompt များ ထည့်ပေးနိုင်ပါသည်။
+- History bot တည်ဆောက်ပါ၊ သမိုင်းကို အသက်ရှင်စေပါ၊ သက်ဆိုင်ရာ သမိုင်းဇာတ်ကောင်တစ်ကောင်ကို ဖော်ပြစေပြီး သူ့ဘဝနဲ့ အချိန်ကာလအကြောင်း တွေကို မေးမြန်းစေပါ။
 
 ## ဖြေရှင်းချက်
 
 ### Study buddy
 
-အောက်တွင် starter prompt တစ်ခုရှိပါတယ်၊ သင့်အကြိုက်အတိုင်း ပြောင်းလဲအသုံးပြုနိုင်ပါတယ်။
+အောက်မှာ စတင်ဖော်ပြထားတဲ့ prompt တစ်ခုရှိပါတယ်၊ သင် ဘယ်လိုအသုံးပြုပြီး သင်ကြိုက်သလို ပြင်ဆင်နိုင်လဲ ကြည့်ပါ။
 
 ```text
 - "You're an expert on the Python language
@@ -488,7 +633,7 @@ Shopping List:
 
 ### History bot
 
-သင်အသုံးပြုနိုင်မည့် prompt အချို့မှာ:
+သုံးနိုင်တဲ့ prompt အချို့က ဒီအတိုင်းပါ။
 
 ```text
 - "You are Abe Lincoln, tell me about yourself in 3 sentences, and respond using grammar and words like Abe would have used"
@@ -497,25 +642,27 @@ Shopping List:
    Tell me about your greatest accomplishments, in 300 words"
 ```
 
-## အသိပညာစစ်ဆေးခြင်း
+## အသိပညာစစ်တမ်း
 
-Temperature ဆိုတဲ့ အယူအဆက ဘာလုပ်ပေးသလဲ?
+temperature ဆိုတဲ့ အယူအဆကဘာလဲ?
 
-1. Output ဘယ်လောက် random ဖြစ်မလဲဆိုတာကို ထိန်းချုပ်ပေးသည်။
-1. Response ဘယ်လောက်ကြီးမလဲဆိုတာကို ထိန်းချုပ်ပေးသည်။
-1. အသုံးပြုမည့် token အရေအတွက်ကို ထိန်းချုပ်ပေးသည်။
+1. အကုန် output ပေါ်မှာ ဘယ်လောက် မမှန်ကန်မှုရှိမလဲ ကို ထိန်းချုပ်တယ်။
+1. ဘယ်လောက် ပြန်ကြားချက် အကြီးကြီးရှိမလဲကို ထိန်းချုပ်တယ်။
+1. ဘယ်လောက် token သုံးမလဲ ဆိုတာကို ထိန်းချုပ်တယ်။
 
 ## 🚀 စိန်ခေါ်မှု
 
-အလုပ်ပေးမှုကို လုပ်နေစဉ်မှာ Temperature ကို ပြောင်းလဲကြည့်ပါ၊ 0, 0.5, 1 ကို သတ်မှတ်ကြည့်ပါ။ 0 က အနည်းဆုံး varied ဖြစ်ပြီး 1 က အများဆုံး varied ဖြစ်သည်။ သင့် app အတွက် ဘယ် value က အကောင်းဆုံးအလုပ်လုပ်မလဲ?
+အလုပ်တာဝန်မှာ ကုဒ်ရေးဆွဲတဲ့အခါ temperature ကို အမျိုးမျိုးပြောင်းလဲပြီး စမ်းကြည့်ပါ၊ 0, 0.5, နဲ့ 1 အဖြစ် သတ်မှတ်ပါ။ 0 က အနည်းဆုံး ကွဲပြားမှုရှိပြီး 1 က အများဆုံးပါ။ သင့် app အတွက် ဘယ်တန်ဖိုးက အကောင်းဆုံးလဲ ဆိုတာ ရှာဖွေပါ။
 
-## အလွန်ကောင်းမွန်သောအလုပ်! သင့်ရဲ့ သင်ယူမှုကို ဆက်လက်လုပ်ဆောင်ပါ
+## အလွန်ကောင်းတာ! သင်ကြားမှုကို ဆက်လက်လုပ်ဆောင်ပါ
 
-ဒီသင်ခန်းစာကို ပြီးမြောက်ပြီးနောက်မှာ [Generative AI Learning collection](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst) ကို ကြည့်ပြီး သင့်ရဲ့ Generative AI အသိပညာကို ဆက်လက်မြှင့်တင်ပါ!
+ဒီသင်ခန်းစာပြီးမြောက်ပါက ကျွန်တော်တို့ရဲ့ [Generative AI Learning collection](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst) ကို ကြည့်ရှုပြီး Generative AI အသိပညာတိုးမြှင့် ဆက်လက်လုပ်ဆောင်နိုင်ပါတယ်!
 
-Lesson 7 သို့ သွားပါ၊ အဲဒီမှာ [chat applications ဖန်တီးပုံ](../07-building-chat-applications/README.md?WT.mc_id=academic-105485-koreyst) ကို ကြည့်ပါ!
+သင်ခန်းစာ ၇ မှာ သွားရောက်ပြီး [chat applications ဆောက်ပုံ](../07-building-chat-applications/README.md?WT.mc_id=academic-105485-koreyst) ကို ကြည့်ရှုပါ!
 
 ---
 
-**အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာပိုင်အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ပြောကြားချက်**
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းနေသော်လည်း၊ စက်ကိရိယာဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် လိုအပ်ပါသည်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ ယုံကြည်စိတ်ချရသော အချက်အလက်အဖြစ် သတ်မှတ်သင့်သည်။ အရေးကြီးသည့် သတင်းအချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသားဘာသာပြန်သူဝန်ဆောင်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုကွာခြားမှုများ သို့မဟုတ် မမှန်ကန်သော အသုံးပြုမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မခံပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

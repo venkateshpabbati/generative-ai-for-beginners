@@ -1,66 +1,66 @@
-# Generatív AI-alapú chatalkalmazások építése
+# Generatív mesterséges intelligencia által vezérelt csevegőalkalmazások építése
 
-[![Generatív AI-alapú chatalkalmazások építése](../../../translated_images/hu/07-lesson-banner.a279b937f2843833.webp)](https://youtu.be/R9V0ZY1BEQo?si=IHuU-fS9YWT8s4sA)
+[![Generatív mesterséges intelligencia által vezérelt csevegőalkalmazások építése](../../../translated_images/hu/07-lesson-banner.a279b937f2843833.webp)](https://youtu.be/R9V0ZY1BEQo?si=IHuU-fS9YWT8s4sA)
 
-> _(Kattints a fenti képre a leckéhez tartozó videó megtekintéséhez)_
+> _(Kattintson a fenti képre a lecke videójának megtekintéséhez)_
 
-Miután láttuk, hogyan építhetünk szöveg-generáló alkalmazásokat, nézzük meg a chatalkalmazásokat.
+Most, hogy láttuk, hogyan építhetünk szövegalkotó alkalmazásokat, nézzük meg a csevegőalkalmazásokat.
 
-A chatalkalmazások szerves részévé váltak mindennapi életünknek, nem csupán alkalmi beszélgetések eszközeként szolgálnak. Fontos szerepet töltenek be az ügyfélszolgálatban, technikai támogatásban, sőt, még kifinomult tanácsadó rendszerekben is. Valószínű, hogy nemrégiben már kapott segítséget egy chatalkalmazástól. Ahogy egyre fejlettebb technológiákat, például generatív AI-t integrálunk ezekbe a platformokba, a komplexitás növekszik, és vele együtt a kihívások is.
+A csevegőalkalmazások beépültek mindennapjainkba, nem csak alkalmi beszélgetések eszközeként. A vevőszolgálat, technikai támogatás és még kifinomult tanácsadó rendszerek elengedhetetlen részei. Valószínű, hogy nemrégiben egy csevegőalkalmazástól kaptál segítséget. Ahogy egyre fejlettebb technológiákat, például generatív mesterséges intelligenciát integrálunk ezekbe a platformokba, nő a komplexitás, és vele együtt a kihívások is.
 
-Néhány kérdés, amelyet meg kell válaszolnunk:
+Néhány kérdés, amelyre meg kell találnunk a választ:
 
-- **Az alkalmazás építése**. Hogyan építhetjük hatékonyan és integrálhatjuk zökkenőmentesen ezeket az AI-alapú alkalmazásokat konkrét felhasználási esetekhez?
-- **Felügyelet**. Miután bevezettük, hogyan tudjuk figyelemmel kísérni és biztosítani, hogy az alkalmazások a legmagasabb szintű minőségben működjenek, mind funkcióik, mind pedig a [felelős AI hat alapelveinek](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=academic-105485-koreyst) betartása szempontjából?
+- **Az alkalmazás építése**. Hogyan építsük meg hatékonyan és integráljuk zökkenőmentesen ezeket a mesterséges intelligenciával működő alkalmazásokat specifikus esetekhez?
+- **Figyelés**. Az alkalmazás telepítése után hogyan monitorozhatjuk és biztosíthatjuk, hogy az alkalmazások a legmagasabb minőségi szinten működnek, mind funkcionalitás, mind a [felelősségteljes AI hat alapelve](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=academic-105485-koreyst) betartása szempontjából?
 
-Ahogy egyre inkább az automatizáció és az ember-gép interakciók korszakába lépünk, elengedhetetlen megérteni, hogyan alakítja át a generatív AI a chatalkalmazások hatókörét, mélységét és alkalmazkodóképességét. Ez a lecke megvizsgálja azokat az architekturális szempontokat, amelyek támogatják ezeket az összetett rendszereket, bemutatja a módszereket, amelyekkel finomhangolhatók az adott területekhez, és értékeli azokat a mérőszámokat és megfontolásokat, amelyek a felelős AI bevezetéséhez szükségesek.
+Ahogy az automatizáció és a zökkenőmentes ember-gép interakciók korszaka előrehalad, elengedhetetlen megérteni, hogyan alakítja át a generatív AI a csevegőalkalmazások hatókörét, mélységét és alkalmazkodóképességét. Ez a lecke megvizsgálja az olyan architekturális szempontokat, amelyek támogatják ezeket az összetett rendszereket, bemutatja a domain-specifikus feladatokra való finomhangolás módszertanát, valamint értékeli a felelős AI bevezetéshez szükséges mutatókat és megfontolásokat.
 
 ## Bevezetés
 
-Ez a lecke az alábbiakat tárgyalja:
+Ez a lecke lefedi:
 
-- Hatékony technikák chatalkalmazások építéséhez és integrálásához.
-- Hogyan alkalmazzuk a testreszabást és finomhangolást az alkalmazásokban.
-- Stratégiák és megfontolások a chatalkalmazások hatékony felügyeletéhez.
+- Technikai megközelítéseket a csevegőalkalmazások hatékony építéséhez és integrálásához.
+- Hogyan alkalmazzunk testreszabást és finomhangolást az alkalmazásokhoz.
+- Stratégiákat és megfontolásokat a csevegőalkalmazások hatékony figyeléséhez.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 
-- Ismertetni a chatalkalmazások meglévő rendszerekbe történő integrálásának szempontjait.
-- Testreszabni chatalkalmazásokat konkrét felhasználási esetekhez.
-- Azonosítani a kulcsfontosságú mérőszámokat és megfontolásokat az AI-alapú chatalkalmazások minőségének hatékony felügyeletéhez és fenntartásához.
-- Biztosítani, hogy a chatalkalmazások felelősségteljesen használják az AI-t.
+- Megmagyarázni a megfontolandó szempontokat a csevegőalkalmazások meglévő rendszerekbe való beépítéséhez.
+- Testreszabni a csevegőalkalmazásokat speciális felhasználási esetekre.
+- Azonosítani a kulcsfontosságú mutatókat és megfontolásokat az AI-alapú csevegőalkalmazások minőségének hatékony monitorozásához és fenntartásához.
+- Biztosítani, hogy a csevegőalkalmazások felelősségteljesen használják az AI-t.
 
-## Generatív AI integrálása chatalkalmazásokba
+## Generatív AI integrálása csevegőalkalmazásokba
 
-A generatív AI által támogatott chatalkalmazások fejlesztése nem csupán arról szól, hogy okosabbá tegyük őket; sokkal inkább az architektúra, a teljesítmény és a felhasználói felület optimalizálásáról, hogy minőségi felhasználói élményt nyújtsanak. Ez magában foglalja az architekturális alapok, API-integrációk és felhasználói felület szempontjainak vizsgálatát. Ez a rész átfogó útmutatót kínál a komplex területek navigálásához, akár meglévő rendszerekbe integrálod őket, akár önálló platformként építed fel.
+A generatív AI-val való fejlesztés nem csupán az alkalmazások okosabbá tételéről szól; az architektúra, a teljesítmény és a felhasználói felület optimalizálása is lényeges egy minőségi felhasználói élmény biztosításához. Ez magában foglalja az architekturális alapok, API integrációk és felhasználói felület megfontolásait. Ez a részletes útmutatót nyújt a bonyolult területek átvizsgálásához, akár meglévő rendszerekhez csatlakoztatod őket, akár önálló platformokat építesz.
 
-A rész végére olyan szakértelemmel leszel felvértezve, amely lehetővé teszi, hogy hatékonyan építsd és integráld a chatalkalmazásokat.
+Ennek a szakasznak a végére meglesz az a tudásod, amely ahhoz szükséges, hogy hatékonyan építs és illessz be csevegőalkalmazásokat.
 
-### Chatbot vagy chatalkalmazás?
+### Chatbot vagy csevegőalkalmazás?
 
-Mielőtt belevágnánk a chatalkalmazások építésébe, hasonlítsuk össze a „chatbotokat” és az „AI-alapú chatalkalmazásokat”, amelyek különböző szerepeket és funkciókat töltenek be. Egy chatbot fő célja, hogy automatizáljon bizonyos beszélgetési feladatokat, például válaszoljon gyakran ismételt kérdésekre vagy nyomon kövesse egy csomagot. Általában szabályalapú logika vagy összetett AI algoritmusok irányítják. Ezzel szemben egy AI-alapú chatalkalmazás sokkal tágabb környezetet kínál, amely különféle digitális kommunikációs formákat tesz lehetővé, például szöveges, hang- és videóbeszélgetéseket emberi felhasználók között. Meghatározó jellemzője egy generatív AI modell integrációja, amely árnyalt, emberi-szerű beszélgetéseket szimulál, és válaszokat generál a különféle bemenetek és kontextuális jelek alapján. Egy generatív AI-alapú chatalkalmazás képes nyílt témájú beszélgetésekre, alkalmazkodik a változó beszélgetési kontextusokhoz, sőt, kreatív vagy összetett párbeszédeket is létrehozhat.
+Mielőtt belekezdenénk a csevegőalkalmazások építésébe, hasonlítsuk össze a 'chatbotokat' és az 'AI-vezérelt csevegőalkalmazásokat', melyek különböző feladatokat és funkciókat látnak el. A chatbot fő célja bizonyos beszélgetési feladatok automatizálása, mint például a gyakran ismételt kérdésekre adott válaszok vagy csomagkövetés. Tipikusan szabályalapú logika vagy összetett AI algoritmusok irányítják. Ezzel szemben az AI-vezérelt csevegőalkalmazás sokkal tágabb környezet, amely különféle digitális kommunikációs formákat támogat, például szöveges, hang- és videócsevegést emberi felhasználók között. Meghatározó jellemzője egy generatív AI modell integrálása, amely árnyalt, emberihez hasonló beszélgetéseket szimulál, válaszokat generálva változatos bemenetek és kontextuális jelek alapján. Egy generatív AI-val működő csevegőalkalmazás képes nyílt témájú beszélgetésekre, alkalmazkodik a változó beszélgetési kontextusokhoz, és kreatív vagy összetett dialógusokat is előállíthat.
 
-Az alábbi táblázat bemutatja a főbb különbségeket és hasonlóságokat, hogy megértsük ezek egyedi szerepét a digitális kommunikációban.
+Az alábbi táblázat a legfőbb különbségeket és hasonlóságokat foglalja össze, hogy megértsük egyedi szerepüket a digitális kommunikációban.
 
-| Chatbot                               | Generatív AI-alapú chatalkalmazás      |
+| Chatbot                               | Generatív AI-val vezérelt csevegőalkalmazás                        |
 | ------------------------------------- | -------------------------------------- |
-| Feladatra fókuszált és szabályalapú   | Kontextusérzékeny                     |
-| Gyakran nagyobb rendszerekbe integrált | Egy vagy több chatbotot is tartalmazhat |
-| Korlátozott programozott funkciók     | Generatív AI modelleket integrál       |
-| Specializált és strukturált interakciók | Nyílt témájú beszélgetésekre képes     |
+| Feladatorientált és szabályalapú      | Kontextusérzékeny                                                 |
+| Gyakran nagyobb rendszerekbe integrálva | Egy vagy több chatbotot is kiszolgálhat                           |
+| Csak programozott funkciókra korlátozódik | Generatív AI modelleket is alkalmaz                               |
+| Specializált és strukturált interakciók | Nyílt témájú beszélgetésekre képes                               |
 
-### Előre elkészített funkciók használata SDK-k és API-k segítségével
+### Előre elkészített funkciók kihasználása SDK-kkal és API-kkal
 
-Amikor chatalkalmazást építünk, jó kiindulópont, ha felmérjük, mi áll már rendelkezésre. Az SDK-k és API-k használata chatalkalmazások építéséhez számos előnnyel jár. Jól dokumentált SDK-k és API-k integrálásával stratégiailag pozícionálod az alkalmazásodat a hosszú távú siker érdekében, kezelve a skálázhatósági és karbantartási problémákat.
+Csevegőalkalmazás építésekor jó kiindulópont felmérni, mi áll már rendelkezésre. SDK-k és API-k használata előnyös stratégia több okból is. A jól dokumentált SDK-k és API-k beillesztésével alkalmazásunkat hosszú távú sikerre pozícionáljuk, kezelve a skálázási és karbantartási szempontokat.
 
-- **Felgyorsítja a fejlesztési folyamatot és csökkenti a költségeket**: Az előre elkészített funkciókra támaszkodva, ahelyett hogy drága folyamatokkal magad építenéd fel őket, lehetőséged nyílik az alkalmazás más fontos aspektusaira koncentrálni, például az üzleti logikára.
-- **Jobb teljesítmény**: Ha a funkciókat a semmiből építed, előbb-utóbb felmerül a kérdés: „Hogyan skálázódik? Képes-e az alkalmazás kezelni a hirtelen felhasználói áradatot?” A jól karbantartott SDK-k és API-k gyakran beépített megoldásokat kínálnak ezekre a problémákra.
-- **Könnyebb karbantartás**: A frissítések és fejlesztések könnyebben kezelhetők, mivel a legtöbb API és SDK egyszerűen egy könyvtár frissítését igényli, amikor újabb verzió jelenik meg.
-- **Hozzáférés a legmodernebb technológiához**: Olyan modellek használata, amelyek kiterjedt adathalmazokon lettek finomhangolva és betanítva, természetes nyelvi képességekkel ruházza fel az alkalmazásodat.
+- **Gyorsítja a fejlesztési folyamatot és csökkenti a terheket**: Az előre megépített funkciókra támaszkodás helyett, hogy drágán saját magad építenéd fel őket, az alkalmazásod más fontosabb aspektusaira koncentrálhatsz, például az üzleti logikára.
+- **Jobb teljesítmény**: Amikor a funkcionalitást nulláról építed, előbb-utóbb felmerül a kérdés: "Hogyan skálázódik? Képes ez az alkalmazás kezelni a hirtelen felhasználói hullámot?" A jól karbantartott SDK-k és API-k gyakran beépített megoldásokat kínálnak ezen kihívásokra.
+- **Könnyebb karbantartás**: A frissítések és fejlesztések kezelése egyszerűbb, mivel a legtöbb API és SDK esetében elegendő egy könyvtár frissítése az új verzió megjelenésekor.
+- **Hozzáférés élvonalbeli technológiákhoz**: Finomhangolt, nagy adathalmazokon tanított modellek használatával az alkalmazás természetes nyelvi képességeket szerez.
 
-Egy SDK vagy API funkcióinak elérése általában a szolgáltatások használatára való engedély megszerzését igényli, amely gyakran egy egyedi kulcs vagy hitelesítési token használatával történik. Az OpenAI Python könyvtárat fogjuk használni, hogy bemutassuk, hogyan néz ki ez. Te is kipróbálhatod a következő [OpenAI notebookban](./python/oai-assignment.ipynb?WT.mc_id=academic-105485-koreyst) vagy az [Azure OpenAI Services notebookban](./python/aoai-assignment.ipynb?WT.mc_id=academic-105485-koreys) ehhez a leckéhez.
+Egy SDK vagy API funkcionalitásának eléréséhez általában engedély szükséges, amit egyedi kulcs vagy hitelesítő token biztosít. Az OpenAI Python könyvtár segítségével mutatjuk be ezt a folyamatot. Ön is kipróbálhatja a következő [OpenAI jegyzetfüzetben](./python/oai-assignment.ipynb?WT.mc_id=academic-105485-koreyst) vagy az [Azure OpenAI Services jegyzetfüzetben](./python/aoai-assignment.ipynb?WT.mc_id=academic-105485-koreys) ehhez a leckéhez.
 
 ```python
 import os
@@ -72,96 +72,122 @@ client = OpenAI(
     api_key=API_KEY
     )
 
-chat_completion = client.chat.completions.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "Suggest two titles for an instructional lesson on chat applications for generative AI."}])
+response = client.responses.create(model="gpt-4o-mini", input="Suggest two titles for an instructional lesson on chat applications for generative AI.", store=False)
+print(response.output_text)
 ```
 
-A fenti példa a GPT-3.5 Turbo modellt használja a prompt teljesítéséhez, de vedd észre, hogy az API kulcsot előzetesen beállították. Hibát kapnál, ha nem állítanád be a kulcsot.
+A fenti példa a GPT-4o mini modellt használja a Responses API-val a prompt befejezésére, de észreveendő, hogy az API kulcsot előzetesen be kell állítani. Hibát kapnál, ha nem állítanád be a kulcsot.
 
 ## Felhasználói élmény (UX)
 
-Általános UX elvek érvényesek a chatalkalmazásokra, de itt van néhány további szempont, amelyek különösen fontosak a gépi tanulási komponensek miatt.
+Általános UX elvek érvényesek a csevegőalkalmazásokra, de itt néhány további megfontolás is fontos lesz a gépi tanulási komponensek miatt.
 
-- **Mechanizmus a kétértelműség kezelésére**: A generatív AI modellek időnként kétértelmű válaszokat generálnak. Egy olyan funkció, amely lehetővé teszi a felhasználók számára, hogy tisztázást kérjenek, hasznos lehet, ha ilyen problémával találkoznak.
-- **Kontextus megőrzése**: A fejlett generatív AI modellek képesek megjegyezni a beszélgetés kontextusát, ami szükséges eszköz lehet a felhasználói élményhez. A felhasználók számára a kontextus kezelésének és irányításának lehetősége javítja az élményt, de növeli az érzékeny felhasználói információk megőrzésének kockázatát. Az információ tárolásának időtartamára vonatkozó megfontolások, például egy megőrzési politika bevezetése, egyensúlyt teremthetnek a kontextus szükségessége és a magánélet között.
-- **Személyre szabás**: Az AI modellek tanulási és alkalmazkodási képessége révén egyéni élményt kínálnak a felhasználók számára. A felhasználói élmény testreszabása olyan funkciókkal, mint például a felhasználói profilok, nemcsak azt az érzést kelti, hogy a felhasználó megértett, hanem segíti őt konkrét válaszok megtalálásában, hatékonyabbá és kielégítőbbé téve az interakciót.
+- **Mechanizmus az egyértelműtlenség kezelésére**: A generatív AI modellek néha kétértelmű válaszokat adnak. Egy olyan funkció, amely engedi a felhasználónak tisztázást kérni, hasznos lehet ilyen esetekben.
+- **Kontextus megőrzés**: A fejlett generatív AI modellek képesek megjegyezni a beszélgetés kontextusát, ami lényeges lehet a felhasználói élményhez. Ha a felhasználók kézben tarthatják és kezelhetik a kontextust, az javítja az élményt, ám magában hordozza a kockázatot, hogy érzékeny információk tárolódnak. Fontos megfontolni a tárolás időtartamát, például visszatartási szabályzat bevezetésével, így kiegyensúlyozva a kontextus szükségességét a magánélettel.
+- **Személyre szabás**: Az AI modellek tanulási és alkalmazkodási képessége személyre szabott élményt nyújt. A felhasználói profilokkal történő testreszabás nemcsak azt a benyomást kelti, hogy a felhasználót megértik, hanem segíti a specifikus válaszok megtalálását, hatékonyabbá és kielégítőbbé téve az interakciót.
 
-Egy ilyen személyre szabási példa az OpenAI ChatGPT „Egyéni utasítások” beállítása. Ez lehetővé teszi, hogy megadjon magáról olyan információkat, amelyek fontos kontextust jelenthetnek a promptjaihoz. Íme egy példa egy egyéni utasításra.
+Egy ilyen személyre szabás példája az OpenAI ChatGPT "Egyéni utasítások" beállítása. Ez lehetőséget ad arra, hogy magadról olyan információkat adj meg, amelyek fontos kontextusok lehetnek a promptjaid számára. Íme egy példa egy egyéni utasításra.
 
 ![Egyéni utasítások beállítása a ChatGPT-ben](../../../translated_images/hu/custom-instructions.b96f59aa69356fcf.webp)
 
-Ez a „profil” arra készteti a ChatGPT-t, hogy készítsen egy lecketervezetet a láncolt listákról. Figyeld meg, hogy a ChatGPT figyelembe veszi, hogy a felhasználó talán mélyebb lecketervezetet szeretne a tapasztalata alapján.
+Ez a "profil" arra ösztönzi a ChatGPT-t, hogy egy tananyagtervet készítsen a láncolt listákról. Észrevehető, hogy a ChatGPT figyelembe veszi a felhasználó tapasztalata alapján a mélyebb tananyagot.
 
-![Egy prompt a ChatGPT-ben a láncolt listákról szóló lecketervezethez](../../../translated_images/hu/lesson-plan-prompt.cc47c488cf1343df.webp)
+![Prompt a ChatGPT-ben láncolt listák témájú tananyagtervhez](../../../translated_images/hu/lesson-plan-prompt.cc47c488cf1343df.webp)
 
-### Microsoft rendszerüzenet-keretrendszere nagy nyelvi modellekhez
+### A Microsoft nagy nyelvi modellekhez készült Rendszerüzenet-keretrendszere
 
-[A Microsoft útmutatást nyújtott](https://learn.microsoft.com/azure/ai-services/openai/concepts/system-message#define-the-models-output-format?WT.mc_id=academic-105485-koreyst) a hatékony rendszerüzenetek írásához, amikor LLM-ekből generálunk válaszokat, négy területre bontva:
+[A Microsoft útmutatót nyújtott](https://learn.microsoft.com/azure/ai-services/openai/concepts/system-message#define-the-models-output-format?WT.mc_id=academic-105485-koreyst) hatékony rendszerüzenetek írásához LLM-ekből történő válaszgeneráláshoz, négy területre bontva:
 
-1. Meghatározni, hogy ki számára készült a modell, valamint annak képességeit és korlátait.
-2. Meghatározni a modell kimeneti formátumát.
-3. Konkrét példák megadása, amelyek bemutatják a modell kívánt viselkedését.
-4. További viselkedési korlátok megadása.
+1. A modell célközönségének, képességeinek és korlátainak meghatározása.
+2. A modell kimeneti formátumának definiálása.
+3. Konkrét példák biztosítása, amelyek bemutatják a modell kívánt viselkedését.
+4. További viselkedési védőintézkedések biztosítása.
 
-### Hozzáférhetőség
+### Akadálymentesség
 
-Akár vizuális, hallási, motoros vagy kognitív fogyatékossággal élő felhasználóról van szó, egy jól tervezett chatalkalmazásnak mindenki számára használhatónak kell lennie. Az alábbi lista a különböző fogyatékosságokkal élő felhasználók hozzáférhetőségét javító konkrét funkciókat sorolja fel.
+Függetlenül attól, hogy a felhasználó látási, hallási, mozgásbeli vagy kognitív sérüléssel él-e, egy jól megtervezett csevegőalkalmazásnak mindenki számára használhatónak kell lennie. Az alábbi lista konkrét funkciókat sorol fel, amelyek különféle felhasználói korlátozásokhoz segítik elő az akadálymentességet.
 
-- **Funkciók látássérültek számára**: Nagy kontrasztú témák és átméretezhető szöveg, képernyőolvasó kompatibilitás.
-- **Funkciók hallássérültek számára**: Szöveg-beszéd és beszéd-szöveg funkciók, vizuális jelzések hangértesítésekhez.
-- **Funkciók mozgássérültek számára**: Billentyűzet-navigáció támogatása, hangparancsok.
-- **Funkciók kognitív fogyatékossággal élők számára**: Egyszerűsített nyelvi opciók.
+- **Látássérülteknek szánt funkciók**: Magas kontrasztú témák és méretezhető szöveg, képernyőolvasó kompatibilitás.
+- **Hallássérülteknek szánt funkciók**: Szöveg-beszéd és beszéd-szöveg funkciók, vizuális jelzések hangértesítésekhez.
+- **Mozgáskorlátozottaknak szánt funkciók**: Billentyűzetes navigáció támogatása, hangalapú parancsok.
+- **Kognitív sérüléssel élőknek szánt funkciók**: Egyszerűsített nyelvi opciók.
 
-## Testreszabás és finomhangolás területspecifikus nyelvi modellekhez
+## Testreszabás és finomhangolás domén-specifikus nyelvi modellekhez
 
-Képzelj el egy chatalkalmazást, amely érti a céged szakzsargonját, és előre látja a felhasználói bázis által gyakran feltett kérdéseket. Két megközelítést érdemes megemlíteni:
+Képzelj el egy csevegőalkalmazást, amely érti a céged zsargonját és előre látja a felhasználói bázis gyakori kérdéseit. Több megközelítést érdemes megemlíteni:
 
-- **DSL modellek használata**. A DSL a területspecifikus nyelvet jelenti. Egy úgynevezett DSL modell használatával, amely egy adott területre van betanítva, megértheted annak fogalmait és szcenárióit.
-- **Finomhangolás alkalmazása**. A finomhangolás folyamata a modell további betanítását jelenti specifikus adatokkal.
+- **DSL modellek használata**. A DSL a domain specifikus nyelvet jelenti. Használhatsz úgynevezett DSL modellt, amely egy adott doménre lett betanítva, hogy megértse annak fogalmait és helyzeteit.
+- **Finomhangolás alkalmazása**. A finomhangolás a modelled további, specifikus adatokkal való tanítása.
 
 ## Testreszabás: DSL használata
 
-A területspecifikus nyelvi modellek (DSL modellek) használata növelheti a felhasználói elköteleződést azáltal, hogy specializált, kontextusban releváns interakciókat biztosít. Ez egy olyan modell, amelyet egy adott területhez, iparághoz vagy témához kapcsolódó szöveg megértésére és generálására képeztek ki vagy finomhangoltak. A DSL modell használatának lehetőségei a nulláról történő betanítástól kezdve a meglévők SDK-kon és API-kon keresztüli használatáig terjednek. Egy másik lehetőség a finomhangolás, amely egy meglévő előre betanított modell adaptálását jelenti egy adott területhez.
+A domén-specifikus nyelvi modellek (DSL modellek) használata növelheti a felhasználói elköteleződést, mivel specializált, kontextusban releváns interakciókat biztosítanak. Ez egy olyan modell, amely egy adott terület, iparág vagy téma szövegének megértésére és generálására lett betanítva vagy finomhangolva. A DSL modell használatának lehetőségei változatosak: lehet saját modellet nulláról tanítani, vagy előre létezőket használni SDK-kon és API-kon keresztül. Egy másik lehetőség a finomhangolás, amely egy meglévő, előre betanított modellt igazít egy adott doménhez.
 
-## Testreszabás: Finomhangolás alkalmazása
+## Testreszabás: finomhangolás alkalmazása
 
-A finomhangolást gyakran akkor alkalmazzák, amikor egy előre betanított modell nem elég egy specializált területen vagy konkrét feladatban.
+A finomhangolás gyakran merül fel, amikor egy előre betanított modell nem teljesít elég jól egy szakosodott doménben vagy adott feladatban.
 
-Például az orvosi kérdések összetettek, és sok kontextust igényelnek. Amikor egy orvosi szakember diagnosztizál egy beteget, az számos tényezőn alapul, például életmódon vagy meglévő állapotokon, és akár a legújabb orvosi folyóiratokra is támaszkodhat a diagnózis megerősítéséhez. Ilyen árnyalt szcenáriókban egy általános célú AI chatalkalmazás nem lehet megbízható forrás.
+Például az orvosi kérdések komplexek és nagy kontextust igényelnek. Amikor egy orvos diagnosztizál, ezt különböző tényezők, például életmód vagy meglévő állapotok figyelembevételével teszi, és olykor aktuális orvosi szaklapokra is támaszkodik diagnózisának alátámasztásához. Ilyen árnyalt helyzetekben egy általános célú AI csevegőalkalmazás nem lehet megbízható forrás.
 
-### Szcenárió: egy orvosi alkalmazás
+### Példa: orvosi alkalmazás
 
-Képzelj el egy chatalkalmazást, amely segíti az orvosi szakembereket azzal, hogy gyorsan hozzáférést biztosít kezelési irányelvekhez, gyógyszerkölcsönhatásokhoz vagy legújabb kutatási eredményekhez.
+Képzelj el olyan csevegőalkalmazást, amely támogatja az orvosi szakembereket gyors hivatkozásokkal kezelési irányelvekre, gyógyszerkölcsönhatásokra vagy legfrissebb kutatási eredményekre vonatkozóan.
 
-Egy általános célú modell megfelelő lehet alapvető orvosi kérdések megválaszolására vagy általános tanácsadásra, de nehézségekbe ütközhet az alábbiakban:
+Egy általános célú modell alkalmas lehet alap orvosi kérdések megválaszolására vagy általános tanácsadásra, de nehézségekbe ütközhet az alábbiakban:
 
-- **Nagyon specifikus vagy összetett esetek**. Például egy neurológus megkérdezheti az alkalmazást: „Melyek a jelenlegi legjobb gyakorlatok a gyógyszer-rezisztens epilepszia kezelésére gyermekeknél?”
-- **Legújabb fejlemények hiánya**
-| **Anomáliaészlelés**         | Eszközök és technikák a szokatlan minták azonosítására, amelyek nem felelnek meg a várt viselkedésnek.                        | Hogyan reagálsz az anomáliákra?                                        |
+- **Nagyon specifikus vagy összetett esetek**. Például egy neurológus megkérdezheti az alkalmazást: „Mik a jelenlegi legjobb gyakorlatok a gyógyszerrezisztens epilepszia kezelésére gyermekkorú betegeknél?”
+- **Friss fejlesztések hiánya**. Egy általános célú modell nem biztos, hogy képes a neurológia és farmakológia legfrissebb eredményeit is figyelembe vevő választ adni.
 
-### Felelős AI gyakorlatok megvalósítása chatalkalmazásokban
+Ilyen esetben a modell finomhangolása egy szakosodott orvosi adattal jelentősen javíthatja e bonyolult orvosi kérdések pontosabb és megbízhatóbb kezelését. Ehhez hozzáférés kell egy nagy és releváns adatkészlethez, amely képviseli a domén-specifikus kihívásokat és kérdéseket.
 
-A Microsoft Felelős AI megközelítése hat alapelvet azonosított, amelyeknek irányítaniuk kell az AI fejlesztését és használatát. Az alábbiakban bemutatjuk az alapelveket, azok meghatározását, valamint a chatfejlesztők számára fontos szempontokat és az okokat, hogy miért kell ezeket komolyan venni.
+## Magas minőségű AI-alapú csevegési élmény megfontolásai
 
-| Alapelvek              | Microsoft meghatározása                               | Szempontok a chatfejlesztő számára                                      | Miért fontos?                                                                     |
+Ez a szakasz a „magas minőségű” csevegőalkalmazások kritériumait vázolja, beleértve a használható mérőszámok rögzítését és a felelősségteljes AI technológia alkalmazásához szükséges keretrendszer betartását.
+
+### Kulcsfontosságú mutatók
+
+Az alkalmazás magas teljesítményének fenntartásához elengedhetetlen a kulcsfontosságú mérőszámok és megfontolások nyomon követése. Ezek az értékelések nemcsak az alkalmazás funkcionalitását biztosítják, hanem felmérik az AI modell és a felhasználói élmény minőségét is. Az alábbi lista alapvető, AI és UX mutatókat tartalmaz, amelyekre érdemes figyelni.
+
+| Mutató                       | Meghatározás                                                                                                             | Fejlesztői szempontok                                                     |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| **Üzemidő**                  | Az az időtartam, amíg az alkalmazás működőképes és a felhasználók számára elérhető.                                         | Hogyan minimalizálod a leállásokat?                                      |
+| **Válaszidő**                | Az az idő, amely alatt az alkalmazás reagál a felhasználó lekérdezésére.                                                    | Hogyan optimalizálod a lekérdezések feldolgozását a válaszidő javítása érdekében? |
+| **Pontosság**                | Az igaz pozitív előrejelzések aránya az összes pozitív előrejelzéshez viszonyítva.                                         | Hogyan validálod a modell pontosságát?                                   |
+| **Visszahívás (Érzékenység)** | Az igaz pozitív előrejelzések aránya a tényleges pozitív esetekhez viszonyítva.                                             | Hogyan méred és javítod a visszahívást?                                 |
+| **F1 pontszám**              | A pontosság és visszahívás harmonikus átlaga, amely egyensúlyt teremt e két mutató között.                                  | Mi a célzott F1 pontszámod? Hogyan egyensúlyozod a pontosságot és visszahívást? |
+| **Perplexitás**              | A mérőszám azt mutatja, mennyire egyezik a modell által jósolt valószínűségi eloszlás az adat valós eloszlásával.             | Hogyan minimalizálod a perplexitást?                                    |
+| **Felhasználói elégedettségi mutatók** | A felhasználók véleményét méri az alkalmazásról, gyakran felmérésekkel gyűjtve.                                             | Milyen gyakran gyűjtesz visszajelzést? Hogyan alkalmazod a tapasztalatokat? |
+| **Hibaarány**                | A modell által elkövetett hibák aránya a megértésben vagy a kimenetben.                                                     | Milyen stratégiáid vannak a hibaarány csökkentésére?                      |
+| **Újraoktatási ciklusok**     | A modell frissítésének gyakorisága új adatok és ismeretek beépítésére.                                                      | Milyen gyakran képezed újra a modellt? Mi indít újraoktatási ciklust?     |
+
+| **Anomália észlelés**         | Szerszámok és technikák a szokványostól eltérő, váratlan mintázatok azonosítására.                        | Hogyan fogsz reagálni az anomáliákra?                                        |
+
+### Felelős MI-gyakorlatok bevezetése csevegőalkalmazásokban
+
+A Microsoft Felelős MI-hez való hozzáállása hat elvet azonosított, amelyeknek irányítaniuk kell az MI fejlesztését és használatát. Az alábbiakban láthatók az elvek, azok meghatározása, valamint amit egy csevegőfejlesztőnek fontolóra kell vennie, és hogy miért kell ezt komolyan vennie.
+
+| Elvek                  | A Microsoft meghatározása                             | Csevegőfejlesztői szempontok                                             | Miért fontos                                                                      |
 | ---------------------- | ----------------------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Méltányosság           | Az AI rendszereknek minden embert méltányosan kell kezelniük. | Biztosítsd, hogy a chatalkalmazás ne diszkrimináljon a felhasználói adatok alapján. | A felhasználói bizalom és befogadás építése érdekében; elkerüli a jogi következményeket. |
-| Megbízhatóság és biztonság | Az AI rendszereknek megbízhatóan és biztonságosan kell működniük. | Tesztelés és biztonsági mechanizmusok bevezetése a hibák és kockázatok minimalizálása érdekében. | Biztosítja a felhasználói elégedettséget és megelőzi a potenciális károkat.       |
-| Adatvédelem és biztonság | Az AI rendszereknek biztonságosnak kell lenniük, és tiszteletben kell tartaniuk az adatvédelmet. | Erős titkosítás és adatvédelmi intézkedések bevezetése.              | Az érzékeny felhasználói adatok védelme és az adatvédelmi törvények betartása érdekében. |
-| Befogadás              | Az AI rendszereknek mindenkit támogatniuk kell, és be kell vonniuk az embereket. | Olyan UI/UX tervezése, amely hozzáférhető és könnyen használható a különböző közönségek számára. | Biztosítja, hogy szélesebb körű emberek hatékonyan használhassák az alkalmazást.  |
-| Átláthatóság           | Az AI rendszereknek érthetőnek kell lenniük.          | Világos dokumentáció és az AI válaszainak indoklása biztosítása.       | A felhasználók nagyobb valószínűséggel bíznak egy rendszerben, ha megértik, hogyan születnek a döntések. |
-| Felelősség             | Az embereknek felelősséget kell vállalniuk az AI rendszerekért. | Egyértelmű folyamat létrehozása az AI döntések auditálására és javítására. | Lehetővé teszi a folyamatos fejlesztést és a hibák esetén a korrekciós intézkedéseket. |
+| Méltányosság           | Az MI rendszereknek méltányosan kell bánniuk minden emberrel. | Biztosítsd, hogy a csevegőalkalmazás ne diszkrimináljon a felhasználói adatok alapján. | A felhasználói bizalom és befogadás megteremtése; jogi következmények elkerülése. |
+| Megbízhatóság és Biztonság | Az MI rendszereknek megbízhatóan és biztonságosan kell működniük. | Tesztelések és biztonsági mechanizmusok bevezetése a hibák és kockázatok minimalizálására. | Felhasználói elégedettség garantálása és potenciális károk megelőzése.             |
+| Adatvédelem és Biztonság | Az MI rendszereknek biztonságosnak kell lenniük, és tiszteletben kell tartaniuk a magánszférát. | Erős titkosítás és adatvédelmi intézkedések alkalmazása.                 | Érzékeny felhasználói adatok védelme és adatvédelmi jogszabályoknak való megfelelés. |
+| Befogadás              | Az MI rendszereknek mindenkiben erőt kell adniuk és be kell vonniuk az embereket. | Olyan UI/UX tervezése, amely hozzáférhető és könnyen használható különböző felhasználók számára. | Szélesebb közönség hatékony alkalmazáshasználatának biztosítása.                   |
+| Átláthatóság           | Az MI rendszerek érthetőek kell legyenek.             | Világos dokumentáció és magyarázatok biztosítása az MI válaszairól.    | A felhasználók jobban megbíznak a rendszerben, ha értik, hogyan hozza döntéseit.   |
+| Felelősség             | Az embereknek felelősséget kell vállalniuk az MI rendszerekért. | Világos folyamat kialakítása az MI döntések auditálására és fejlesztésére. | Folyamatos fejlesztés és hibák esetén helyesbítő intézkedések lehetősége.          |
 
 ## Feladat
 
-Lásd [feladat](../../../07-building-chat-applications/python). Ez végigvezet egy sor gyakorlaton, az első chatparancsok futtatásától kezdve a szöveg osztályozásán és összegzésén át, és még sok másig. Figyeld meg, hogy a feladatok különböző programozási nyelveken érhetők el!
+Lásd a [feladatot](../../../07-building-chat-applications/python). Átvezet egy sor gyakorlaton az első csevegési promptod futtatásától a szöveg osztályozásán és összefoglalásán át sok minden másig. Érdemes megjegyezni, hogy a feladatok különböző programozási nyelveken is elérhetők!
 
-## Szép munka! Folytasd az utat
+## Nagyszerű munka! Folytasd az utazást
 
-A leckét befejezve nézd meg a [Generatív AI tanulási gyűjteményt](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst), hogy tovább fejleszthesd a Generatív AI ismereteidet!
+A lecke elvégzése után nézd meg [a Generatív MI tanulási gyűjteményünket](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst), hogy tovább fejleszthesd generatív MI tudásod!
 
-Lépj tovább a 8. leckére, hogy megtudd, hogyan kezdhetsz el [keresési alkalmazásokat építeni](../08-building-search-applications/README.md?WT.mc_id=academic-105485-koreyst)!
+Lépj át a 8. leckére, hogy megtudd, hogyan kezdhetsz el [keresőalkalmazásokat építeni](../08-building-search-applications/README.md?WT.mc_id=academic-105485-koreyst)!
 
 ---
 
-**Felelősség kizárása**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Jogi nyilatkozat**:
+Ez a dokumentum az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javasolunk. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely ebből a fordításból ered.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
